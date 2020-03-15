@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="TP_Muebleria_asp.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body style="background-color:#f0f39b">
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" role="navigation" style="background-color:#07a805">
+                <div class="container">
+                    <a class="navbar-brand" href="Home_cliente.aspx">Muebleria</a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"></button>
+                    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                        <ul class="nav navbar-nav" style="color:white">
+                            <asp:LinkButton ID="living_lbtn" runat="server" OnClick="living_lbtn_Click">Living </asp:LinkButton> &nbsp;&nbsp; 
+                            <asp:LinkButton ID="dormitorio_lbtn" runat="server" OnClick="dormitorio_lbtn_Click">Dormitorio </asp:LinkButton>&nbsp;&nbsp;
+                            <asp:LinkButton ID="cocina_lbtn" runat="server" OnClick="cocina_lbtn_Click">Cocina </asp:LinkButton>&nbsp;&nbsp;
+                            <asp:LinkButton ID="comedor_lbtn" runat="server" OnClick="comedor_lbtn_Click">Comedor </asp:LinkButton>&nbsp;&nbsp;
+                            <asp:LinkButton ID="baño_lbtn" runat="server" OnClick="baño_lbtn_Click">Exterior </asp:LinkButton>&nbsp;&nbsp;
+                            
+                            <asp:LinkButton ID="admin_lbtn" runat="server" OnClick="contacto_lbtn_Click">Administrador </asp:LinkButton>&nbsp;&nbsp;
+                            
+                        </ul>
+                        <div style="margin-left:80px">
+                            
+                        </div>
+                        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                            <%--<li class="nav-item" style="margin-left:30px"><a href="#" class="nav-link">Carrito</a></li>--%>
+                            <asp:LinkButton ID="LinkButton1" OnCLick="carrito_lbtn_Click" runat="server">Carrito </asp:LinkButton> &nbsp;&nbsp;
+                            <li class="dropdown order-1">
+                              <%--<button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-light dropdown-toggle">Ingresar <span class="caret"></span></button>--%>
+                                <asp:LinkButton ID="login_lbtn" OnClick="login_btn_Click" runat="server">Login</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <div class="row" style="background-color:black">
+                <div style="color:white ; margin-left:80%">
+                    Telefono: 5555-5555<br />
+                    Direccion: Av Pirulo 555, Gral Pacheco<br />
+                    Mail: myp@mueblerias.com.ar
+                </div>
+            </div>
+        </footer>
+    </form>
+ 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
