@@ -12,13 +12,6 @@ Tipo_Usuario varchar(30) NOT NULL,
 )
 GO
 
-CREATE TABLE Tipo_Pago
-(
-Cod_TipoP_TP char(6) PRIMARY KEY NOT NULL,
-Tipo_Pago varchar(30) NOT NULL,
-)
-GO
-
 CREATE TABLE Usuarios
 (
 Cod_Usuario_US int identity(1,1) PRIMARY KEY NOT NULL,
@@ -50,14 +43,6 @@ Estado bit NOT NULL,
 )
 GO
 
-CREATE TABLE ProductosxMarcas
-(
-Cod_Producto_PxM char(6) NOT NULL,
-Cod_Marca_PxM char(6) NOT NULL,
-Stock int NOT NULL,
-CONSTRAINT PK_ProductosxMarcas PRIMARY KEY (Cod_Producto_PxM,Cod_Marca_PxM)
-)
-GO
 
 CREATE TABLE Categorias
 (
@@ -74,18 +59,7 @@ CONSTRAINT PK_CatxPro PRIMARY KEY (Cod_Producto_CxP,Cod_Categoria_CxP)
 )
 GO
 
-CREATE TABLE Marcas
-(
-Cod_Marca_MA char(6) PRIMARY KEY NOT NULL,
-Nombre_Compania varchar(35) NOT NULL,
-Nombre_Contacto varchar(35) NOT NULL,
-Direccion varchar(25) NOT NULL,
-Ciudad varchar(30) NOT NULL,
-Telefono varchar(25) NOT NULL,
-EMail varchar(40) NULL,
-Estado bit NOT NULL
-)
-GO
+
 
 CREATE TABLE Compras
 (
@@ -94,6 +68,7 @@ Fecha smalldatetime NOT NULL,
 Precio_Total money NULL
 )
 GO
+
 
 CREATE TABLE Detalle_Compra
 (
@@ -106,34 +81,7 @@ Precio_Unitario money NOT NULL
 GO
 
 
-CREATE TABLE Facturas
-(
-Cod_Factura_F int identity (1,1) PRIMARY KEY NOT NULL,
-Cod_Usuario_F int  NOT NULL,
-Fecha_Venta smalldatetime NOT NULL,
-Cod_TipoP_F char(6) NOT NULL,
-Precio_Total money NULL
-)
-GO
-
-CREATE TABLE Detalle_Factura
-(
-Cod_Factura_DF int NOT NULL,
-Cod_Producto_DF char(6) NOT NULL,
-Cod_Marca_DF char(6) NOT NULL,
-Cantidad_Vendida int NOT NULL,
-Precio_Unitario money NOT NULL,
-)
-GO
-
 --/////////// CONEXIONES ///////////
-
-ALTER TABLE ProductosxMarcas
-ADD CONSTRAINT FK_ProductosxMarcas_Producto FOREIGN KEY (Cod_Producto_PxM) REFERENCES Productos (Cod_Producto_PRO)
-
-
-ALTER TABLE ProductosxMarcas
-ADD CONSTRAINT FK_ProductosxMarcas_Marcas FOREIGN KEY (Cod_Marca_PxM) REFERENCES Marcas (Cod_Marca_MA)
 
 
 ALTER TABLE Usuarios
@@ -156,21 +104,6 @@ ALTER TABLE Detalle_Compra
 ADD CONSTRAINT FK_Detalle_CompraxProductos FOREIGN KEY (Cod_Producto_DC) REFERENCES Productos (Cod_Producto_PRO)
 
 
-ALTER TABLE Facturas
-ADD CONSTRAINT FK_FacturasxUsuario FOREIGN KEY (Cod_Usuario_F) REFERENCES Usuarios (Cod_Usuario_US)
-
-
-ALTER TABLE Facturas
-ADD CONSTRAINT FK_FacturasxTP FOREIGN KEY (Cod_TipoP_F) REFERENCES Tipo_Pago (Cod_TipoP_TP)
-
-
-ALTER TABLE Detalle_Factura
-ADD CONSTRAINT FK_Detalle_FacuraxFacturas FOREIGN KEY (Cod_Factura_DF) REFERENCES Facturas (Cod_Factura_F)
-
-
-ALTER TABLE Detalle_Factura
-ADD CONSTRAINT FK_Detalle_FacturaxProductosxMarcas FOREIGN KEY (Cod_Producto_DF, Cod_Marca_DF) REFERENCES ProductosxMarcas (Cod_Producto_PxM, Cod_Marca_PxM)
-
 ALTER TABLE Productos
 ADD CONSTRAINT FK_Productos_Categorias FOREIGN KEY (Cod_categoria_prod) REFERENCES categorias (Cod_Categoria_CAT)
 GO
@@ -182,10 +115,6 @@ select 'tu1', 'Cliente' UNION
 select 'tu2','Administrador' UNION
 select 'tu3', 'Vendedor' 
 
-insert into Tipo_Pago (Cod_TipoP_TP, Tipo_Pago)
-select 'tp1', 'Efectivo' UNION
-select 'tp2','Tarjeta de Debito' UNION
-select 'tp3', 'Tarjeta de Credito'
 
 insert into Categorias(Cod_Categoria_CAT, Nombre_Categoria)
 select'cat1','Dormitorio'UNION
@@ -222,41 +151,6 @@ select 'a24','Cama marinera','cama estilo campo marinera o cucheta reforzada con
 select 'a25','Alacena triple','Alacena con tres puertas tipo campo','fotos\alacena297592659_2.jpg','Marrón','roble',15000,195,170,55,1,'cat2'
 
 
-
-insert into Marcas(Cod_Marca_MA, Nombre_Compania, Nombre_Contacto, Direccion, Ciudad, Telefono, EMail, Estado)
-select 'm1','American Wood','Alberto Rodriguez','Alameda 2300','San Miguel','011234522','albertoR@americanwood.com','1'UNION
-select 'm2','Anubis','Jorge Montez','Sarmiento 1980','San Justo','011563427','jorgemontez@anubis.com.ar','1'UNION
-select 'm3','Tvilum','Alan Gomez','San Juan 182','Martinez','011562399','alangomez@gmail.com','1'UNION
-select 'm4','Muebles Jim','José Perez','San Martín 1290','Avellaneda','011234532','joseperez@gmail.com','1'
-
-
-insert into ProductosxMarcas(Cod_Producto_PxM, Cod_Marca_PxM, Stock)
-select'a1','m2',10 UNION
-select'a2','m2',9 UNION
-select'a3','m1',11 UNION
-select'a4','m1',6 UNION
-select'a5','m1',12 UNION
-select'a6','m3',25 UNION
-select'a7','m3',20 UNION
-select'a8','m1',12 UNION
-select'a9','m1',26 UNION
-select'a10','m2',24 UNION
-select'a11','m1',9 UNION
-select'a12','m2',10 UNION
-select'a13','m4',8 UNION
-select'a14','m4',34 UNION
-select'a15','m4',12 UNION
-select'a16','m4',9 UNION
-select'a17','m2',12 UNION
-select'a18','m4',20 UNION
-select'a19','m3',15 UNION
-select'a20','m4',14 UNION
-select'a21','m1',10 UNION
-select'a22','m1',25 UNION
-select'a23','m4',15 UNION
-select'a24','m4',10 UNION
-select'a25','m4',8
-
 insert into CatxPro (Cod_Producto_CxP, Cod_Categoria_CxP)
 select'a1','cat4'UNION
 select'a2','cat4'UNION
@@ -289,7 +183,6 @@ select 'tu2','Luciano Gonzalo','Fredes','1234','41897127','1164009455','LGF@ghma
 select 'tu1','Alexis','Rodriguez','11110','41000000','1164009455','AR@ghmail.com',1 Union
 select 'tu3','Rocio','Favre','2222','40111111','1164009455','RF@ghmail.com',1 
 
-
 insert into Compras (Fecha,Precio_Total)
 select GETDATE(),0UNION
 select GETDATE(),0 
@@ -298,12 +191,6 @@ select GETDATE(),0
 
 --DBCC CHECKIDENT ( Compras, RESEED, 0 )
 
-
-insert into Facturas (Cod_Usuario_F,Cod_TipoP_F,Fecha_Venta,Precio_Total)
-select 2,'tp2', GETDATE(),0
-
-insert into Detalle_Factura (Cod_Factura_DF, Cod_Producto_DF, Cod_Marca_DF, Precio_Unitario, Cantidad_Vendida)
-select 1,'a4','m1',18000,2
 
 insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cod_Marca_DC,Cantidad_Comprada,Precio_Unitario)
 select 1,'a14','m4',10,7000 
