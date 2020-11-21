@@ -18,10 +18,12 @@ namespace TP_Muebleria_asp
                 if (Session["Usuario"] == null)
                 {
                     aclaracion_lbl.Visible = false;
-
-                }else
-                {
+                    editar_btn.Visible = false;
                     cerrarU_btn.Visible = false;
+
+                }
+                else
+                {                    
                     nombre_lbl.Visible = false;
                     nombre_txt.Visible = false;
                     contraseña_lbl.Visible = false;
@@ -34,6 +36,12 @@ namespace TP_Muebleria_asp
         {
             Session["Usuario"] = null;
             Server.Transfer("Login.aspx");
+        }
+
+        protected void editar_btn_Click(object sender, EventArgs e)
+        {
+            
+            Server.Transfer("Sign_int.aspx");
         }
 
         protected void crearU_btn_Click(object sender, EventArgs e)

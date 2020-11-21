@@ -43,10 +43,14 @@
     Contraseña:    
     </div>
     <div class ="col-6" style="text-align:center">
-        <asp:TextBox ID="contra_txt" runat="server"></asp:TextBox>   
+        <asp:TextBox type="password" ID="contra_txt" runat="server"></asp:TextBox>   
     </div>
     <div class ="col-12" style="text-align:center">
         <asp:Button ID="crear_btn" runat="server" Text="Crear Usuario" OnClick="crear_btn_Click" />
+        <br />
+    </div>
+    <div class ="col-12" style="text-align:center">
+        <asp:Button ID="editar_btn" runat="server" Text="Editar Usuario" OnClick="editar_btn_Click" />
         <br />
     </div>
     <div class ="col-12" style="text-align:center">

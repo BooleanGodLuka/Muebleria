@@ -31,6 +31,12 @@
     <div class="col-6" style="text-align:center">
         <asp:Button ID="crearU_btn" runat="server" Text="Crear Usuario" OnClick="crearU_btn_Click"/>
     </div>
+
+    <div class="col-6" style="text-align:center">
+        <asp:Button ID="editar_btn" runat="server" Text="Editar Usuario" OnClick="editar_btn_Click"/>
+    </div>
+
+
     </div>
 
 

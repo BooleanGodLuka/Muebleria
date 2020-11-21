@@ -17,6 +17,16 @@ namespace TP_Muebleria_asp
         {
             if (!IsPostBack)
             {
+                
+                if (Session["Usuario"] == null)
+                {
+                    editar_btn.Visible = false;
+                }
+                else
+                {
+                    crear_btn.Visible = false;
+                }
+                
                 aclaracion_lbl.Visible = false;
 
             }
@@ -103,6 +113,48 @@ namespace TP_Muebleria_asp
 
 
             }    
+
+        }
+
+        protected void editar_btn_Click(object sender, EventArgs e)
+        {
+            if (!val_rellenado())
+            {
+                aclaracion_lbl.Text = "Datos insuficientes";
+                aclaracion_lbl.Visible = true;
+            }
+            else
+            {
+                
+                  
+                    ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
+                    
+                    Usuario us = new Usuario();
+                    us.set_apellido(apellido_txt.Text);
+                    us.set_contra(contra_txt.Text);
+                    us.set_dni(dni_txt.Text);
+                    us.set_mail(mail_txt.Text);
+                    us.set_nombre(nombre_txt.Text);
+                    us.set_tel(tel_txt.Text);
+                try { 
+                    string consulta = "update usuarios set EMail = '" + us.get_mail() + "', Apellido='"+us.get_apellido()+"', " +
+                    " Nombre='"+us.get_nombre()+"', Contraseña='"+us.get_contra()+"', DNI='"+us.get_dni()+"', " +
+                    "Telefono= '"+us.get_tel()+"' where COD_Usuario_US = " + us.get_cod() ;
+                    clasita.ejecutar_comando(consulta);
+                }
+                catch (Exception gg)
+                {
+                    aclaracion_lbl.Text = "Error de BD";
+                    aclaracion_lbl.Visible = true;
+                }
+
+                    Session["usuario"] = us;
+                    Server.Transfer("Home_cliente.aspx");
+
+                
+
+
+            }
 
         }
     }
