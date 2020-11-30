@@ -8,14 +8,25 @@
         <br />
         <asp:Button ID="cerrarU_btn" runat="server" Text="Cerrar Sesion" OnClick="cerrarU_btn_Click" />
     </div>
+    
     <div class="col-6" style="text-align:center">
-        <asp:Label ID="nombre_lbl" runat="server" Text="Correo electronico"></asp:Label>
+        <asp:Label ID="mail_lbl" runat="server" Text="Correo electronico"></asp:Label>
 
     </div>
     <div class="col-6" style="text-align:center">
-        <asp:TextBox ID="nombre_txt" runat="server"></asp:TextBox>
+        <asp:TextBox ID="mail_txt" runat="server"></asp:TextBox>
 
     </div>
+
+     <div class="col-6" style="text-align:center">
+        <asp:Label ID="mail2_lbl" runat="server" Text="Correo electronico"></asp:Label>
+
+    </div>
+    <div class="col-6" style="text-align:center">
+        <asp:TextBox ID="mail2_txt" runat="server"></asp:TextBox>
+
+    </div>
+
     <div class="col-6" style="text-align:center">
         <asp:Label ID="contraseña_lbl" runat="server" Text="Contraseña"></asp:Label>
 

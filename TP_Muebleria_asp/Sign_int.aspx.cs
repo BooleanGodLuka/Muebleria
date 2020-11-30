@@ -91,12 +91,21 @@ namespace TP_Muebleria_asp
                 }
                 else
                 {
-                    string consulta = "Insert into Usuarios (Nombre,Apellido,DNI,Telefono,EMail,Contraseña) values ('"
+                    /*string consulta = "Insert into Usuarios (Nombre,Apellido,DNI,Telefono,EMail,Contraseña) values ('"
                         + nombre_txt.Text + "','" + apellido_txt.Text + "','" + dni_txt.Text + "','" +
                         tel_txt.Text + "','" + mail_txt.Text + "'" +contra_txt.Text + "');";
-
+                    */
                     ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
-                    clasita.ejecutar_comando(consulta);
+                    try
+                    {
+                        //clasita.ejecutar_comando(consulta);
+                        clasita.aplicarconsultasql("Insert into Usuarios (Nombre,Apellido,DNI,Telefono,EMail,Contraseña) values ('"
+                        + nombre_txt.Text + "','" + apellido_txt.Text + "','" + dni_txt.Text + "','" +
+                        tel_txt.Text + "','" + mail_txt.Text + "'" + contra_txt.Text + "');");
+                    }catch(Exception gg)
+                    {
+
+                    }
                     Usuario us = new Usuario();
                     us.set_apellido(apellido_txt.Text);
                     us.set_contra(contra_txt.Text);

@@ -33,22 +33,40 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Button cerrarU_btn;
 
         /// <summary>
-        /// Control nombre_lbl.
+        /// Control mail_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombre_lbl;
+        protected global::System.Web.UI.WebControls.Label mail_lbl;
 
         /// <summary>
-        /// Control nombre_txt.
+        /// Control mail_txt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombre_txt;
+        protected global::System.Web.UI.WebControls.TextBox mail_txt;
+
+        /// <summary>
+        /// Control mail2_lbl.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mail2_lbl;
+
+        /// <summary>
+        /// Control mail2_txt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox mail2_txt;
 
         /// <summary>
         /// Control contraseña_lbl.

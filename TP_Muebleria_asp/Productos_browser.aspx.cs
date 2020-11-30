@@ -74,7 +74,19 @@ namespace TP_Muebleria_asp
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
+            DataTable dt = new DataTable();
+            string consulta = "Select DISTINCT Tipo_Madera from Productos where Cod_categoria_Prod  = '" + Session["Categoria"].ToString() + "'";
 
+            dt = clasita.ObtenerDataTable(consulta);
+
+            tmadera_drpd.Items.Add("Tipos de madera");
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string madera = dt.Rows[i].ItemArray[0].ToString();
+                tmadera_drpd.Items.Add(madera);
+            }
 
 
 
@@ -116,8 +128,30 @@ namespace TP_Muebleria_asp
 
         protected void buscar_btn_click(object sender, EventArgs e)
         {
-            
-            Session["Filtro"] = buscar_text.Text.ToString();
+
+            if (buscar_text.Text != "")
+            {
+                Session["Filtro"] = " AND Nombre_Producto LIKE '%" + buscar_text.Text.ToString() + "%'";
+                    
+            }
+
+            if (tmadera_drpd.SelectedValue != "Tipos de madera")
+            {
+                if (Session["Filtro"] != null)
+                {
+                    Session["Filtro"] += " AND Tipo_Madera LIKE '%" + tmadera_drpd.SelectedValue.ToString() + "%'";
+                
+                }else
+                {
+                    Session["Filtro"] = " AND Tipo_Madera LIKE '%" + tmadera_drpd.SelectedValue.ToString() + "%'";
+                }
+
+                
+                
+            }
+
+            //Response.Write("<script>alert('" + Session["Filtro"] + "')</script>");
+
             Response.Redirect("Productos_browser.aspx?key=" + Session["Filtro"]);
         }
 

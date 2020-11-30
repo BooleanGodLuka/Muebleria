@@ -13,19 +13,27 @@ namespace TP_Muebleria_asp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
+            
                 if (Session["Usuario"] == null)
                 {
                     aclaracion_lbl.Visible = false;
                     editar_btn.Visible = false;
                     cerrarU_btn.Visible = false;
+                    mail_lbl.Visible = true;
+                    mail_txt.Visible = true;
+                    contraseña_lbl.Visible = true;
+                    contraseña_txt.Visible = true;
+                    mail2_lbl.Visible = true;
+                    mail2_txt.Visible = true;
 
                 }
                 else
                 {                    
-                    nombre_lbl.Visible = false;
-                    nombre_txt.Visible = false;
+                    mail_lbl.Visible = false;
+                    mail_txt.Visible = false;
                     contraseña_lbl.Visible = false;
                     contraseña_txt.Visible = false;
                 }
@@ -54,7 +62,7 @@ namespace TP_Muebleria_asp
         {
             for (int i =0; i<dt.Rows.Count; i++)
             {
-                if (dt.Rows[i]["EMail"].ToString() == nombre_txt.Text)
+                if (dt.Rows[i]["EMail"].ToString() == mail2_txt.Text)
                 {
                     if (dt.Rows[i]["Contraseña"].ToString() == contraseña_txt.Text)
                     {

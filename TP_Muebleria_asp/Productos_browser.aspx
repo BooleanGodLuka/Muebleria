@@ -23,7 +23,9 @@
             <form action="/action_page.php">
       
       <asp:TextBox ID="buscar_text" runat="server" placeholder="Buscar..." style="display:inline-block"></asp:TextBox>
+      <asp:DropDownList ID="tmadera_drpd" runat="server"></asp:DropDownList>
       <asp:LinkButton ID="buscar_btn" runat="server" Onclick="buscar_btn_click" style="display:inline-block ; width: 25px ; height: auto" ><i class="fa fa-search" style="text-align:center"></i></asp:LinkButton>
+
     </form>
   </div>
         </div>
@@ -43,15 +45,19 @@
 
         if (Convert.ToString(Request.QueryString["key"]) == null) {
 
-             consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'";
+            consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'";
         }
         else
         {
-             consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "' AND Nombre_Producto LIKE '%" + 
-                Convert.ToString(Request.QueryString["key"]) + "%'";
+            consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'"+
+                Convert.ToString(Request.QueryString["key"]);
         }
-        
 
+        %>
+        
+        <script>alert(<%=consulta%>)</script>
+
+        <%
         //System.Data.SqlClient.SqlDataAdapter adp = new System.Data.SqlClient.SqlDataAdapter(consulta, cn);
         //adp.Fill(ts);
 
@@ -63,7 +69,7 @@
         string link;
         string img;
 
-        
+
 
         %>
    
