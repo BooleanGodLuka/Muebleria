@@ -28,21 +28,21 @@ namespace TP_Muebleria_asp
             //cn.Close();
         }
 
-        protected void cargar_drop_cantidad ()
-        {
-            int max = obtener_stock();
+        //protected void cargar_drop_cantidad ()
+        //{
+        //    int max = obtener_stock();
 
-            for (int i = 0; i<max; i++)
-            {
-                cantidad_ddl.Items.Insert(i, (i+1).ToString());
+        //    for (int i = 0; i<max; i++)
+        //    {
+        //        cantidad_ddl.Items.Insert(i, (i+1).ToString());
 
-            }
+        //    }
             
           
 
 
 
-        }
+        //}
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace TP_Muebleria_asp
                 ancho_lbl.Text = prod.get_ancho().ToString();
                 color_lbl.Text = prod.get_color();
                 tipoM_lbl.Text = prod.get_t_madera();
-                cargar_drop_cantidad();
+                //cargar_drop_cantidad();
 
 
 
