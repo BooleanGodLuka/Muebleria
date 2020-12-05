@@ -96,16 +96,19 @@ namespace TP_Muebleria_asp
                         tel_txt.Text + "','" + mail_txt.Text + "'" +contra_txt.Text + "');";
                     */
                     ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
+                    string consulta = "Insert into Usuarios(Nombre, Apellido, DNI, Telefono, EMail, Contraseña, Ctipo_Usuario_US) values('"
+                            + nombre_txt.Text + "','" + apellido_txt.Text + "','" + dni_txt.Text + "','" +
+                            tel_txt.Text + "','" + mail_txt.Text + "','" + contra_txt.Text + "', " +
+                            "(select Ctipo_Usuario_TU as Ctipo_Usuario_US from Tipo_Usuarios where Tipo_Usuario = 'Cliente'));";
                     try
                     {
                         //clasita.ejecutar_comando(consulta);
-                        clasita.aplicarconsultasql("Insert into Usuarios (Nombre,Apellido,DNI,Telefono,EMail,Contraseña) values ('"
-                        + nombre_txt.Text + "','" + apellido_txt.Text + "','" + dni_txt.Text + "','" +
-                        tel_txt.Text + "','" + mail_txt.Text + "'" + contra_txt.Text + "');");
+                        clasita.aplicarconsultasql(consulta);
                     }catch(Exception gg)
                     {
 
                     }
+                    DataRow cod = clasita.ObtenerFilaEspecifica("Select MAX(Cod_Usuario_US) as codigo From Usuarios");
                     Usuario us = new Usuario();
                     us.set_apellido(apellido_txt.Text);
                     us.set_contra(contra_txt.Text);
@@ -113,6 +116,7 @@ namespace TP_Muebleria_asp
                     us.set_mail(mail_txt.Text);
                     us.set_nombre(nombre_txt.Text);
                     us.set_tel(tel_txt.Text);
+                    us.set_cod(cod["codigo"].ToString());
                    
                     Session["usuario"] = us;
                     Server.Transfer("Login.aspx");

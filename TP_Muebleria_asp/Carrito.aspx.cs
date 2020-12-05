@@ -75,12 +75,14 @@ namespace TP_Muebleria_asp
                 consulta = "Insert into Detalle_Factura(Cod_Factura_DF,Cod_Producto_DF,Cod_Marca_DF,Cantidad_Vendida,Precio_Unitario)" +
                             "select " + dt.Rows[0][0].ToString() + ",'" + carrito_grdv.Rows[j].Cells[0] +
                             "','" +dt2.Rows[0][0].ToString() + "'" + carrito_grdv.Rows[j].Cells[2] + "'";
-                clasita.ejecutar_comando(consulta);
+                clasita.ejecutar_comando(consulta);             //aca la consulta manda cualquiera, por eso no se carga
 
 
             }//MAX(Cod_Factura_F)
 
-            
+            Session["Carrito"] = null;
+            Response.Write("<script>alert('Compra realizada! (no esta validado todavia)')</script>");
+            Server.Transfer("Home_cliente.aspx");
 
         }
 

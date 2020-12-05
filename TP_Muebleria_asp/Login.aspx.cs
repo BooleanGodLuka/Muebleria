@@ -34,8 +34,12 @@ namespace TP_Muebleria_asp
                 {                    
                     mail_lbl.Visible = false;
                     mail_txt.Visible = false;
+                    mail2_lbl.Visible = false;
+                    mail2_txt.Visible = false;
                     contraseña_lbl.Visible = false;
                     contraseña_txt.Visible = false;
+                    cerrarU_btn.Visible = true;
+                    editar_btn.Visible = true;
                 }
             }
         }
