@@ -7,20 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TP_Muebleria_asp {
-    
-    
-    public partial class Carrito {
-        
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+namespace TP_Muebleria_asp
+{
+
+
+    public partial class Carrito
+    {
+
         /// <summary>
         /// Control carrito_grdv.
         /// </summary>
@@ -29,7 +22,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView carrito_grdv;
-        
+
         /// <summary>
         /// Control aclaracion_lbl.
         /// </summary>
@@ -38,7 +31,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label aclaracion_lbl;
-        
+
         /// <summary>
         /// Control compra_btn.
         /// </summary>

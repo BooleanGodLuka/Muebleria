@@ -1,19 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="TP_Muebleria_asp.Carrito" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="Carrito.aspx.cs" Inherits="TP_Muebleria_asp.Carrito" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+   <style>
+    .button {
+  background-color:#000000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:auto; 
+  margin-right:auto;
+  cursor: pointer;
+ 
+}
+    </style>
+
         
         <br />
-        <div class="row">
-        <div class="col-12" style="text-align:center">
-            <asp:GridView ID="carrito_grdv" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="carrito_grdv_RowDeleting">
+        
+        <div class="col-12" >
+            <asp:GridView ID="carrito_grdv" style="margin-left:auto; margin-right:auto;" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="carrito_grdv_RowDeleting">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="Eliminar" ShowHeader="False">
@@ -40,18 +52,10 @@
         <div class="col-12" style="text-align:center">
             <asp:Label ID="aclaracion_lbl" runat="server" Text="Label"></asp:Label>
         </div>
-        <div class="col-4" style="text-align:center">
-
-        </div>
-        <div class="col-4" style="text-align:center">
-
-        </div>
-        <div class="col-4" style="text-align:center">
+        <div class="col-12" >
             <asp:Button ID="compra_btn"  runat="server" Text="Comprar" OnClick="compra_btn_Click" />
 
         </div>
-        </div>
-        
-    </form>
-</body>
-</html>
+       
+
+</asp:Content>
