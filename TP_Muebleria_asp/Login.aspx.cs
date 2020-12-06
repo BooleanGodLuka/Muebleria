@@ -83,18 +83,22 @@ namespace TP_Muebleria_asp
             DataTable dt = new DataTable();
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
             Usuario us = new Usuario();
-            dt = clasita.ObtenerDataTable("Select * From Usuarios");
+            string consulta =  "Select * from Usuarios where Email = '" + mail2_txt.Text + "' AND Contraseña = '" + contraseña_txt.Text + "'";
+            dt = clasita.ObtenerDataTable(consulta);
+            //DataRow dr = clasita.ObtenerFilaEspecifica(consulta);
 
-            if (val_sesion(dt))
+
+
+            if (clasita.ValidarConsulta(consulta))
             {
                 us.cargar_us_xtabla(dt);
                 Session["Usuario"] = us;
-                Server.Transfer("Login.aspx");
+                Server.Transfer("Home_cliente.aspx");
             }
             else
             {
-                aclaracion_lbl.Text = "Datos incorrectos";
-                aclaracion_lbl.Visible = true;
+                Response.Write("<script>alert('Datos incorrectos')</script>");
+                Server.Transfer("Login.aspx");
             }
 
         

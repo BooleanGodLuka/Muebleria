@@ -87,15 +87,6 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.TextBox contraseña_txt;
 
         /// <summary>
-        /// Control inicioS_btn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inicioS_btn;
-
-        /// <summary>
         /// Control crearU_btn.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace TP_Muebleria_asp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button crearU_btn;
+
+        /// <summary>
+        /// Control inicioS_btn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inicioS_btn;
 
         /// <summary>
         /// Control editar_btn.

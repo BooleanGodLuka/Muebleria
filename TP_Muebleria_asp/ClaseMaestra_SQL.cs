@@ -55,6 +55,18 @@ using System.Data.SqlClient;
         return dt.Rows[fila];
     }
 
+    public bool ValidarConsulta(string consulta)
+    {
+        DataTable dt = ObtenerDataTable(consulta);
+
+        foreach (DataRow dr in dt.Rows)
+        {
+            return true;
+        }
+        return false;
+
+    }
+
     public void cargaTabla(String NombreTabla, String consulta, ref DataSet ds)
         {
             SqlConnection cn = ObtenerConexion();

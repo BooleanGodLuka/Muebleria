@@ -32,16 +32,17 @@
 
     </div>
     <div class="col-6" style="text-align:center">
-        <asp:TextBox ID="contraseña_txt" runat="server"></asp:TextBox>
-
-    </div>
-    <div class="col-6" style="text-align:center">
-        <asp:Button ID="inicioS_btn" runat="server" Text="Iniciar sesion" OnClick="inicioS_btn_Click" />
+        <asp:TextBox ID="contraseña_txt" type="password" runat="server"></asp:TextBox>
 
     </div>
     <div class="col-6" style="text-align:center">
         <asp:Button ID="crearU_btn" runat="server" Text="Crear Usuario" OnClick="crearU_btn_Click"/>
     </div>
+    <div class="col-6" style="text-align:center">
+        <asp:Button ID="inicioS_btn" runat="server" Text="Iniciar sesion" OnClick="inicioS_btn_Click" />
+
+    </div>
+    
 
     <div class="col-6" style="text-align:center">
         <asp:Button ID="editar_btn" runat="server" Text="Editar Usuario" OnClick="editar_btn_Click"/>
