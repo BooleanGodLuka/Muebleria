@@ -29,7 +29,9 @@
                             <asp:LinkButton ID="cocina_lbtn" runat="server" OnClick="cocina_lbtn_Click">Cocina </asp:LinkButton>&nbsp;&nbsp;
                             <asp:LinkButton ID="comedor_lbtn" runat="server" OnClick="comedor_lbtn_Click">Comedor </asp:LinkButton>&nbsp;&nbsp;
                             <asp:LinkButton ID="baño_lbtn" runat="server" OnClick="baño_lbtn_Click">Exterior </asp:LinkButton>&nbsp;&nbsp;
-                            
+                              <asp:TextBox ID="buscar_text" runat="server" placeholder="Buscar..." style="display:inline-block"></asp:TextBox>
+                              <asp:LinkButton ID="buscar_btn" runat="server" Onclick="buscar_btn_click" style="display:inline-block ; width: 25px ; height: auto" ><i class="fa fa-search" style="text-align:center"></i></asp:LinkButton>
+
                             <asp:LinkButton ID="admin_lbtn" runat="server" OnClick="contacto_lbtn_Click">Administrador </asp:LinkButton>&nbsp;&nbsp;
                             
                         </ul>

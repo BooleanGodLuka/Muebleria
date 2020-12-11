@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <br />
+    <br />
+
    <style>
     .button {
   background-color:#000000;
@@ -56,6 +59,12 @@
             <asp:Button ID="compra_btn"  runat="server" Text="Comprar" OnClick="compra_btn_Click" />
 
         </div>
+
+    Macaco come sopa du macaco
+    <br />
+    <br />
+    <br />
+
        
 
 </asp:Content>

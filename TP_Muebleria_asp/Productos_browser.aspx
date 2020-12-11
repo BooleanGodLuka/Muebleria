@@ -33,8 +33,7 @@
     
   
 
-
-
+    
     <% 
 
         ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
@@ -44,18 +43,35 @@
         string consulta;
 
         if (Convert.ToString(Request.QueryString["key"]) == null) {
+            
+                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'";
+            
 
-            consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'";
+
         }
         else
         {
-            consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'"+
-                Convert.ToString(Request.QueryString["key"]);
+            string busqueda = "";
+            if (Convert.ToString(Request.QueryString["key"]).Substring(0,1) == "B") {
+
+                busqueda = Convert.ToString(Request.QueryString["key"]).Substring(1);
+                consulta = "Select * from Productos where Nombre_Producto like '%" + busqueda + "%'";
+            }else
+            {
+                busqueda = Convert.ToString(Request.QueryString["key"]).Substring(1);
+                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'"+
+                busqueda;
+            }
+
+            %>
+            <script>console.log("<%=busqueda %>")</script>
+            <script>console.log("<%=consulta %>")</script>  
+   <%
         }
 
         %>
         
-        <script>alert(<%=consulta%>)</script>
+     
 
         <%
         //System.Data.SqlClient.SqlDataAdapter adp = new System.Data.SqlClient.SqlDataAdapter(consulta, cn);

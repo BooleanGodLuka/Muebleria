@@ -76,17 +76,36 @@ namespace TP_Muebleria_asp
 
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
             DataTable dt = new DataTable();
-            string consulta = "Select DISTINCT Tipo_Madera from Productos where Cod_categoria_Prod  = '" + Session["Categoria"].ToString() + "'";
-
-            dt = clasita.ObtenerDataTable(consulta);
-
-            tmadera_drpd.Items.Add("Tipos de madera");
-            
-            for (int i = 0; i < dt.Rows.Count; i++)
+            string consulta = "";
+            if (Session["Categoria"] == null)
             {
-                string madera = dt.Rows[i].ItemArray[0].ToString();
-                tmadera_drpd.Items.Add(madera);
+                //consulta = "Select DISTINCT Tipo_Madera from Productos where Nombre_Producto like '" + Session["Busqueda"].ToString() + "'";
+                tmadera_drpd.Visible = false;
+                buscar_btn.Visible = false;
+                buscar_text.Visible = false;
             }
+            else
+            {
+                consulta = "Select DISTINCT Tipo_Madera from Productos where Cod_categoria_Prod  = '" + Session["Categoria"].ToString() + "'";
+                tmadera_drpd.Visible = true;
+                buscar_btn.Visible = true;
+                buscar_text.Visible = true;
+
+
+
+
+                dt = clasita.ObtenerDataTable(consulta);
+
+                tmadera_drpd.Items.Add("Tipos de madera");
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string madera = dt.Rows[i].ItemArray[0].ToString();
+                    tmadera_drpd.Items.Add(madera);
+                }
+            }
+            
+
 
 
 
@@ -126,6 +145,8 @@ namespace TP_Muebleria_asp
 
         }
 
+        
+
         protected void buscar_btn_click(object sender, EventArgs e)
         {
 
@@ -152,7 +173,7 @@ namespace TP_Muebleria_asp
 
             //Response.Write("<script>alert('" + Session["Filtro"] + "')</script>");
 
-            Response.Redirect("Productos_browser.aspx?key=" + Session["Filtro"]);
+            Response.Redirect("Productos_browser.aspx?key=" + "F" + Session["Filtro"]);
         }
 
     }

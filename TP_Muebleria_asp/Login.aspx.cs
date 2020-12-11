@@ -28,6 +28,7 @@ namespace TP_Muebleria_asp
                     contraseña_txt.Visible = true;
                     mail2_lbl.Visible = true;
                     mail2_txt.Visible = true;
+                    inicioS_btn.Visible = true;
 
                 }
                 else
@@ -36,6 +37,7 @@ namespace TP_Muebleria_asp
                     mail_txt.Visible = false;
                     mail2_lbl.Visible = false;
                     mail2_txt.Visible = false;
+                    inicioS_btn.Visible = false;
                     contraseña_lbl.Visible = false;
                     contraseña_txt.Visible = false;
                     cerrarU_btn.Visible = true;
