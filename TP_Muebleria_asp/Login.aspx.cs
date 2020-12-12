@@ -95,7 +95,15 @@ namespace TP_Muebleria_asp
             {
                 us.cargar_us_xtabla(dt);
                 Session["Usuario"] = us;
-                Server.Transfer("Home_cliente.aspx");
+                if (us.get_tipo() == "tu2   ")
+                {
+                    Server.Transfer("Home_admin.aspx");
+                }
+                else
+                {
+                    Server.Transfer("Home_cliente.aspx");
+                }
+                
             }
             else
             {
