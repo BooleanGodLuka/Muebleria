@@ -63,7 +63,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox7" type="number" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:Label>
