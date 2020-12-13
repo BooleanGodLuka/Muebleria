@@ -63,7 +63,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox7" type="number" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:Label>
@@ -71,7 +71,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Alto">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Alto") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox8" type="number" runat="server" Text='<%# Bind("Alto") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label8" runat="server" Text='<%# Bind("Alto") %>'></asp:Label>
@@ -79,7 +79,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Ancho">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Ancho") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox9" type="number" runat="server" Text='<%# Bind("Ancho") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label9" runat="server" Text='<%# Bind("Ancho") %>'></asp:Label>
@@ -87,7 +87,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Largo">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox10" runat="server" Text='<%# Bind("Largo") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox10" type="number" runat="server" Text='<%# Bind("Largo") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label10" runat="server" Text='<%# Bind("Largo") %>'></asp:Label>

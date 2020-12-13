@@ -55,6 +55,7 @@ namespace TP_Muebleria_asp
         {
 
             string url = ((FileUpload)GridView1.Rows[e.RowIndex].FindControl("FileUpload1")).FileName;
+
             if (((FileUpload)GridView1.Rows[e.RowIndex].FindControl("FileUpload1")).HasFile)
                 ((FileUpload)GridView1.Rows[e.RowIndex].FindControl("FileUpload1")).SaveAs(Server.MapPath("/fotos/" + url));
             url = "/fotos/" + url;
@@ -67,6 +68,7 @@ namespace TP_Muebleria_asp
             string color = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox5")).Text;
             string tipoM = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox6")).Text;
             string precio = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox7")).Text;
+            precio = precio.Replace(",", ".");
             string alto = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox8")).Text;
             string ancho = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox9")).Text;
             string largo = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox10")).Text;
@@ -79,11 +81,27 @@ namespace TP_Muebleria_asp
             {
 
                 //Aplico el update a la tabla usuarios con los datos obtenidos
-                aq.aplicarconsultasql("update Productos set Estado = '" + estado + "' ,Foto_Producto = '" + url
-                    + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
-                    + "' ,Precio_Unitario = '" + precio + "' ,Alto = '" + alto
+                string consulta = "";
+                if (url == "/fotos/")
+                {
+                    consulta = "update Productos set Estado = '" + estado + "' ,Nombre_Producto = '" + nombre 
+                    + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                    + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
                      + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
-                     + "' where Cod_Producto_PRO = " + idProd);
+                     + "' where Cod_Producto_PRO = '" + idProd + "'";
+
+                }
+                else
+                {
+                    consulta = "update Productos set Estado = '" + estado + "' ,Foto_Producto = '" + url
+                    + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                    + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
+                     + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
+                     + "' where Cod_Producto_PRO = '" + idProd + "'";
+
+                }
+
+                aq.aplicarconsultasql(consulta);
 
             }
             catch (Exception)

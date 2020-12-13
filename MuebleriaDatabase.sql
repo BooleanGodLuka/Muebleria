@@ -126,7 +126,6 @@ select'cat5','Exterior'
 insert into Productos (Cod_Producto_PRO, Nombre_Producto,Descripcion,Foto_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado,Cod_categoria_Prod)
 select 'a1','Sillón Barcelona','dos cuerpos, tapizado con pana','fotos\2219190.jpg','beige','pino',18000,80,150,80,1,'cat4'UNION
 select 'a2','Sillón Barcelona','dos cuerpos, tapizado con pana','fotos\2219182.jpg','gris','pino',19000,80,150,80,1,'cat4'UNION
-select 'a3','Sillón Concept','tres cuerpos, tapizado Ecocuero','fotos\178101X.jpg','beige','pino',30300,73,220,90,1,'cat4'UNION
 select 'a4','Sillón Concept','tres cuerpos, tapizado Ecocuero','fotos\1790994.jpg','marrón','pino',30300,73,220,90,1,'cat4'UNION
 select 'a5','Sillón Aero','tres cuerpos, tapizado con pana','fotos\2437066.jpg','gris','pino',27000,73,220,80,1,'cat4'UNION
 select 'a6','Estantería Oslo','cinco estantes y un cajón','fotos\2168707.jpg','blanco','pino',6380,180,55,48,1,'cat2'UNION
