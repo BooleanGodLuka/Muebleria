@@ -60,7 +60,7 @@
 
         </div>
 
-    Macaco come sopa du macaco
+    
     <br />
     <br />
     <br />

@@ -33,8 +33,9 @@
             <asp:Label ID="nombreprod_lbl" runat="server" Text="Nombre producto"></asp:Label>
             </font>
             <br />
-            <font size="5">
-                <asp:Label ID="precio_lbl" runat="server" Text="precio $"></asp:Label> $
+            <%--<font size="5">
+                Precio
+                <asp:label id="precio_lbl" runat="server" text="precio $"></asp:label> $
                 Ancho
                 <asp:Label ID="ancho_lbl" runat="server" Text="cm"></asp:Label> cm
                 Alto
@@ -49,7 +50,47 @@
             <font size="3">
                 Tipo de Madera
                 <asp:Label ID="tipoM_lbl" runat="server" Text="natural"></asp:Label>
-                </font>
+                </font>--%>
+
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Precio</th>
+      <td> $<asp:Label ID="precio_lbl" runat="server" Text="precio $"></asp:Label> </td>
+
+    </tr>
+    <tr>
+      <th scope="row">Ancho</th>
+        <td> <asp:Label ID="ancho_lbl" runat="server" Text="cm"></asp:Label> cm  </td>
+    </tr>
+    <tr>
+      <th scope="row">Alto</th>
+        <td>  <asp:Label ID="alto_lbl" runat="server" Text="Label"></asp:Label> cm </td>
+    </tr>
+     <tr>
+      <th scope="row">Color</th>
+        <td> <asp:Label ID="color_lbl" runat="server" Text="cm"></asp:Label> </td>
+    </tr>
+       <tr>
+      <th scope="row">Tipo de Madera</th>
+        <td>   <asp:Label ID="tipoM_lbl" runat="server" Text="natural"></asp:Label> </td>
+    </tr>
+       <tr>
+      <th scope="row">Cantidad</th>
+        <td>  <asp:TextBox ID="Cantidad_txt" runat="server" type="number"></asp:TextBox> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
             <br />
             <br />
             <br />
@@ -57,7 +98,12 @@
             <div style="margin-right:70%">
             
                 
-                <asp:DropDownList ID="cantidad_ddl" runat="server" ></asp:DropDownList>
+                <%--<asp:DropDownList ID="cantidad_ddl" runat="server" ></asp:DropDownList>--%>
+
+
+               <%-- <asp:TextBox ID="Cantidad_txt" runat="server" type="number"></asp:TextBox>--%>
+                    
+
 
                 <asp:LinkButton ID="LinkButton1" runat="server" class="button" OnClick="LinkButton1_Click">Agregar a carro</asp:LinkButton>
                 <!--<asp:Button ID="carro" runat="server" Text="Button" />-->

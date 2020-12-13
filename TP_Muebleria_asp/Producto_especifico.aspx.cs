@@ -113,7 +113,7 @@ namespace TP_Muebleria_asp
 
                 DataTable aux2 = new DataTable();
                 aux2 = clasita.ObtenerDataTable("Select Cod_Producto_PRO as Codigo, Nombre_Producto" +
-                    " as Nombre,  Precio_Unitario as Precio From Productos where Cod_Producto_PRO = '" +
+                    " as Nombre,  Precio_Unitario as Precio," + Cantidad_txt.Text +" as Cantidad From Productos where Cod_Producto_PRO = '" +
                     prod.get_cod() + "'");
                 //DataRow row = aux2.NewRow();
                 //row = clasita.ObtenerFilaEspecifica("Select Cod_Producto_PRO as Codigo, " +
