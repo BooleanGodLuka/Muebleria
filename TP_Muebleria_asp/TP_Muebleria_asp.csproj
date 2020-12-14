@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin_Facturas.aspx" />
     <Content Include="Admin_Productos.aspx" />
     <Content Include="Admin_usuarios.aspx" />
     <Content Include="Carrito.aspx" />
@@ -80,6 +81,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Facturas.aspx.cs">
+      <DependentUpon>Admin_Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Facturas.aspx.designer.cs">
+      <DependentUpon>Admin_Facturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Productos.aspx.cs">
       <DependentUpon>Admin_Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

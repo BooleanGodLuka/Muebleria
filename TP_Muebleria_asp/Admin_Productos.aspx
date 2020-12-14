@@ -14,7 +14,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Producto">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>' ReadOnly></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>'></asp:Label>

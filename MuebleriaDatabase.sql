@@ -153,7 +153,6 @@ select 'a25','Alacena triple','Alacena con tres puertas tipo campo','fotos\alace
 insert into CatxPro (Cod_Producto_CxP, Cod_Categoria_CxP)
 select'a1','cat4'UNION
 select'a2','cat4'UNION
-select'a3','cat4'UNION
 select'a4','cat4'UNION
 select'a5','cat4'UNION
 select'a6','cat4'UNION
@@ -192,7 +191,7 @@ select GETDATE(),0
 
 
 insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cod_Marca_DC,Cantidad_Comprada,Precio_Unitario)
-select 1,'a14','m4',10,7000 
+select 1,'a14','m4',10,7500.00 
 GO
 
 
@@ -200,7 +199,7 @@ GO
 
 --/////////// TRIGGERS /////////// Esta parte tendria que ir en otra consulta, create trigger debe ser la unica instruccion del lote
 
-CREATE TRIGGER Disminuirstock
+/*CREATE TRIGGER Disminuirstock
 ON Detalle_Factura
 AFTER INSERT
 AS
@@ -226,7 +225,7 @@ SELECT @CodMarca = Cod_Marca_DC, @CodProducto = Cod_Producto_DC,
 UPDATE ProductosxMarcas set Stock = Stock + @CantidadComprada
 where Cod_Marca_PxM = @CodMarca and Cod_Producto_PxM = @CodProducto
 END
-GO
+GO*/
 
 CREATE TRIGGER TotalizarCompra
 ON Detalle_Compra
@@ -241,7 +240,7 @@ where Cod_Compra_CO = @Cod_Compra_DC
 END
 GO
 
-
+/*
 CREATE TRIGGER TotalizarFactura
 ON Detalle_Factura
 AFTER INSERT
@@ -253,7 +252,7 @@ select @Cod_Factura_DF = Cod_Factura_DF , @PrecioTotal= Cantidad_Vendida * Preci
 UPDATE Facturas set Precio_Total = Precio_Total + @PrecioTotal 
 where Cod_Factura_F = @Cod_Factura_DF
 END
-GO
+GO*/
 
 
 
