@@ -13,7 +13,7 @@ namespace TP_Muebleria_asp
         {
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-
+            
             if (Session["Usuario"] == null)
             {
                 login_lbtn.Text = "Ingresar";
@@ -106,6 +106,26 @@ namespace TP_Muebleria_asp
             Session["Filtro"] = null;
             Session["Categoria"] = null;
             Response.Redirect("Productos_browser.aspx?key=" + "B" + Session["Busqueda"]);
+        }
+
+        protected void logo_ibtn_click (object sender, ImageClickEventArgs e)
+        {
+            if (Session["Usuario"] == null )
+            {
+                Response.Redirect("Home_cliente.aspx");
+
+            }else
+            {
+                Usuario us = (Usuario)Session["Usuario"];
+                if (us.get_tipo() == "tu1   ")
+                {
+                    Response.Redirect("Home_cliente.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Home_admin.aspx");
+                }
+            }
         }
 
     }

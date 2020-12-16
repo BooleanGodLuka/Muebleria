@@ -50,7 +50,7 @@ namespace TP_Muebleria_asp
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
 
-            string idComp = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox1")).Text;
+            string idComp = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox3")).Text;
             string fecha = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
 
             string precio_total = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox7")).Text;

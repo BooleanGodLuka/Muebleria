@@ -76,9 +76,11 @@ namespace TP_Muebleria_asp
                 //cargar_dest_url(ref destacado_url, cod_prods);
 
                 /// Esto hasta que tengamos base de datos
-                destacado_url[0] = "https://www.tifon.es/1150-large_default/pack-4-sillas-comedor-leiza-2.jpg";
-                destacado_url[1] = "https://http2.mlstatic.com/mesas-comedor-mesa-lustrada-guayubira-marmol-negro-cosmic-D_NQ_NP_989663-MLA26004806223_092017-O.jpg";
-                destacado_url[2] = "https://www.perozzi.com.ar/6790-large_default/placard.jpg";
+                destacado_url[0] = "https://www.perozzi.com.ar/6790-large_default/placard.jpg";
+                destacado_url[1] = "https://hendel-r7d8odghj1.stackpathdns.com/media/catalog/product/cache/0c3e9ac8430b5a3e77d1544ae1698a10/3/1/31997_1.jpg";
+                destacado_url[2] = "https://http2.mlstatic.com/mesas-comedor-mesa-lustrada-guayubira-marmol-negro-cosmic-D_NQ_NP_989663-MLA26004806223_092017-O.jpg";
+                
+
 
                 Destacado1_img.ImageUrl = destacado_url[0];
                 Destacado2_img.ImageUrl = destacado_url[1];
