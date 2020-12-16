@@ -76,7 +76,7 @@ Cod_Compra_DC int NOT NULL,
 Cod_Marca_DC char(6) NOT NULL,
 Cod_Producto_DC char(6) NOT NULL,
 Cantidad_Comprada int NOT NULL,
-Precio_Unitario money NOT NULL
+Precio_Unitario money NULL
 )
 GO
 
@@ -258,14 +258,17 @@ where Cod_Marca_PxM = @CodMarca and Cod_Producto_PxM = @CodProducto
 END
 GO*/
 
-CREATE TRIGGER TotalizarCompra
+ALTER TRIGGER TotalizarCompra
 ON Detalle_Compra
 AFTER INSERT
 AS
 BEGIN
 SET NOCOUNT ON;
-DECLARE @Cod_Compra_DC char(6)
-select @Cod_Compra_DC = Cod_Compra_DC FROM INSERTED
+DECLARE @Cod_Compra_DC char(6), @Cod_Producto_DC char(6), @Cantidad int
+select @Cod_Compra_DC = Cod_Compra_DC , @Cod_Producto_DC= Cod_Producto_DC, @Cantidad = Cantidad_Comprada FROM INSERTED
+
+exec Totalizar_PrecioUnitario @Cod_Compra_DC = @Cod_Compra_DC , @Cod_Producto_DC= @Cod_Producto_DC, @Cantidad = @Cantidad
+
 exec Totalizar_PrecioTotal @Cod_Compra_DC = @Cod_Compra_DC
 END
 GO
