@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Facturas.aspx" />
+    <Content Include="Admin_Factura_Especifica.aspx" />
     <Content Include="Admin_Productos.aspx" />
     <Content Include="Admin_usuarios.aspx" />
     <Content Include="Carrito.aspx" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="Admin_Facturas.aspx.designer.cs">
       <DependentUpon>Admin_Facturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Factura_Especifica.aspx.cs">
+      <DependentUpon>Admin_Factura_Especifica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Factura_Especifica.aspx.designer.cs">
+      <DependentUpon>Admin_Factura_Especifica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Productos.aspx.cs">
       <DependentUpon>Admin_Productos.aspx</DependentUpon>

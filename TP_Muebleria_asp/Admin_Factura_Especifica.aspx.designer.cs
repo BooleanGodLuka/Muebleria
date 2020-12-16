@@ -11,7 +11,7 @@ namespace TP_Muebleria_asp
 {
 
 
-    public partial class Formulario_web2
+    public partial class Admin_Factura_Especifica
     {
 
         /// <summary>
