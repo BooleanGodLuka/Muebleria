@@ -125,7 +125,7 @@ select'cat5','Exterior'
 
 insert into Productos (Cod_Producto_PRO, Nombre_Producto,Descripcion,Foto_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado,Cod_categoria_Prod)
 select 'a1','Sillón Barcelona','dos cuerpos, tapizado con pana','fotos\2219190.jpg','beige','pino',18000,80,150,80,1,'cat4'UNION
-select 'a2','Sillón Barcelona','dos cuerpos, tapizado con pana','fotos\2219182.jpg','gris','pino',19000,80,150,80,1,'cat4'UNION
+select 'a2','Sillones Barcelona','dos cuerpos, tapizado con pana','fotos\2219182.jpg','gris','pino',19000,80,150,80,1,'cat4'UNION
 select 'a4','Sillón Concept','tres cuerpos, tapizado Ecocuero','fotos\1790994.jpg','marrón','pino',30300,73,220,90,1,'cat4'UNION
 select 'a5','Sillón Aero','tres cuerpos, tapizado con pana','fotos\2437066.jpg','gris','pino',27000,73,220,80,1,'cat4'UNION
 select 'a6','Estantería Oslo','cinco estantes y un cajón','fotos\2168707.jpg','blanco','pino',6380,180,55,48,1,'cat2'UNION
@@ -194,7 +194,38 @@ insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cod_Marca_DC,Cantidad_C
 select 1,'a14','m4',10,7500.00 
 GO
 
+--/////////////SP /////////////--
+Create Procedure Totalizar_PrecioUnitario
+@Cod_Compra_DC char(6), @Cod_Producto_DC char(6), @Cantidad int
+AS
+SET NOCOUNT ON
+Declare @precio_individual money
+select @precio_individual = p.Precio_Unitario from Productos as p where Cod_Producto_PRO = @Cod_Producto_DC
 
+update Detalle_Compra set Precio_Unitario = @Cantidad * @precio_individual 
+where Cod_Compra_DC = @Cod_Compra_DC and Cod_Producto_DC = @Cod_Producto_DC
+GO
+
+create procedure Totalizar_PrecioTotal
+@Cod_Compra_DC char(6)
+AS
+Declare @Precio_f money
+ select @Precio_f = SUM(Precio_Unitario) 
+ from Detalle_Compra 
+ where Cod_Compra_DC = @Cod_Compra_DC
+
+ update Compras set Precio_Total = @Precio_f where Cod_Compra_CO= @Cod_Compra_DC
+
+GO
+
+CREATE PROCEDURE ProductosxCategoriasGetProductos
+@Cod_Categoria char(6)	
+AS
+SET NOCOUNT ON;
+Select * From CatxPro
+where  Cod_Categoria_CxP = @Cod_Categoria
+GO
+ 
 
 
 --/////////// TRIGGERS /////////// Esta parte tendria que ir en otra consulta, create trigger debe ser la unica instruccion del lote
@@ -233,10 +264,25 @@ AFTER INSERT
 AS
 BEGIN
 SET NOCOUNT ON;
-DECLARE @Cod_Compra_DC char(6), @PrecioTotal Money 
-select @Cod_Compra_DC = Cod_Compra_DC , @PrecioTotal= Cantidad_Comprada * Precio_Unitario FROM INSERTED
-UPDATE Compras set Precio_Total = Precio_Total + @PrecioTotal 
-where Cod_Compra_CO = @Cod_Compra_DC
+DECLARE @Cod_Compra_DC char(6)
+select @Cod_Compra_DC = Cod_Compra_DC FROM INSERTED
+exec Totalizar_PrecioTotal @Cod_Compra_DC = @Cod_Compra_DC
+END
+GO
+
+Create TRIGGER TotalizarCompra_updt
+ON Detalle_Compra
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE @Cod_Compra_DC char(6), @Cod_Producto_DC char(6), @Cantidad int
+select @Cod_Compra_DC = Cod_Compra_DC , @Cod_Producto_DC= Cod_Producto_DC, @Cantidad = Cantidad_Comprada FROM INSERTED
+
+exec Totalizar_PrecioUnitario @Cod_Compra_DC = @Cod_Compra_DC , @Cod_Producto_DC= @Cod_Producto_DC, @Cantidad = @Cantidad
+
+exec Totalizar_PrecioTotal @Cod_Compra_DC = @Cod_Compra_DC
+
 END
 GO
 
@@ -255,14 +301,5 @@ END
 GO*/
 
 
-
-CREATE PROCEDURE ProductosxCategoriasGetProductos
-@Cod_Categoria char(6)	
-AS
-SET NOCOUNT ON;
-Select * From CatxPro
-where  Cod_Categoria_CxP = @Cod_Categoria
-GO
- 
  Execute ProductosxCategoriasGetProductos @Cod_Categoria='cat1';
  GO
