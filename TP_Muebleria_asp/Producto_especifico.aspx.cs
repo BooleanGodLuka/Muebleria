@@ -88,15 +88,28 @@ namespace TP_Muebleria_asp
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
             DataTable aux = (DataTable)Session["Carrito"];
             cargar_producto();
+
+            //DataRow precio = aux.NewRow();
+            //precio = clasita.ObtenerFilaEspecifica("Select Precio_Unitario as Precio from Productos where Cod_Producto_PRO = '"+ prod.get_cod() + "'" );
+
+            //float preciof = precio.Field<float>("Precio");
+
+            float preciototal = float.Parse(precio_lbl.Text) * float.Parse(Cantidad_txt.Text);
+
+
+
+
             if (aux != null)
             {
 
                 //aux.Rows.Add(clasita.ObtenerFilaEspecifica("Select Cod_Producto_PRO as Codigo, Nombre_Producto as Nombre, "));
                 //aux.Rows[0]["Codigo"].
+                string consulta = "Select Cod_Producto_PRO as Codigo, " +
+                    "Nombre_Producto as Nombre, " + preciototal + " as Precio, " + Cantidad_txt.Text + " as Cantidad From Productos " +
+                    "where Cod_Producto_PRO = '" + prod.get_cod() + "'";
+
                 DataRow row = aux.NewRow();
-                row = clasita.ObtenerFilaEspecifica("Select Cod_Producto_PRO as Codigo, " +
-                    "Nombre_Producto as Nombre,  Precio_Unitario as Precio From Productos " +
-                    "where Cod_Producto_PRO = '" + prod.get_cod() + "'");
+                row = clasita.ObtenerFilaEspecifica(consulta);
                 //aux.Rows.Add(row);
                 aux.ImportRow(row);
 
@@ -109,11 +122,14 @@ namespace TP_Muebleria_asp
             else
             {
 
+
+
+
                 ///Si no hay carrito, se crea uno para asignarle los datos 
 
                 DataTable aux2 = new DataTable();
                 aux2 = clasita.ObtenerDataTable("Select Cod_Producto_PRO as Codigo, Nombre_Producto" +
-                    " as Nombre,  Precio_Unitario as Precio," + Cantidad_txt.Text +" as Cantidad From Productos where Cod_Producto_PRO = '" +
+                    " as Nombre,  "+ preciototal + " as Precio," + Cantidad_txt.Text +" as Cantidad From Productos where Cod_Producto_PRO = '" +
                     prod.get_cod() + "'");
                 //DataRow row = aux2.NewRow();
                 //row = clasita.ObtenerFilaEspecifica("Select Cod_Producto_PRO as Codigo, " +

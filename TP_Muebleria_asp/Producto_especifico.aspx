@@ -62,7 +62,7 @@
   <tbody>
     <tr>
       <th scope="row">Precio</th>
-      <td> $<asp:Label ID="precio_lbl" runat="server" Text="precio $"></asp:Label> </td>
+      <td> $ <asp:Label ID="precio_lbl" runat="server" Text="precio $"></asp:Label> </td>
 
     </tr>
     <tr>

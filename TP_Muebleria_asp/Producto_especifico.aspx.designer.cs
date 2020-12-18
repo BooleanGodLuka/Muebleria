@@ -15,34 +15,16 @@ namespace TP_Muebleria_asp
     {
 
         /// <summary>
-        /// Control GridView1.
+        /// Control Prod_img.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Image Prod_img;
 
         /// <summary>
-        /// Control GridView1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-
-        /// <summary>
-        /// Control nombre_txt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cantidad_txt;
-
-        /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control nombreprod_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -51,7 +33,7 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label nombreprod_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control precio_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -60,7 +42,7 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label precio_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control ancho_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -69,7 +51,7 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label ancho_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control alto_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -78,7 +60,7 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label alto_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control color_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -87,7 +69,7 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label color_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control tipoM_lbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -96,13 +78,30 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label tipoM_lbl;
 
         /// <summary>
-        /// Control aclaracion_lbl.
+        /// Control Cantidad_txt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Prod_img;
+        protected global::System.Web.UI.WebControls.TextBox Cantidad_txt;
 
+        /// <summary>
+        /// Control LinkButton1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+
+        /// <summary>
+        /// Control carro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button carro;
     }
 }
