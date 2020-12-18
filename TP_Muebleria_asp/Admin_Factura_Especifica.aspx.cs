@@ -25,9 +25,10 @@ namespace TP_Muebleria_asp
 
         void cargargrid()
         {
+            string codigo = Convert.ToString(Request.QueryString["key"]);
 
             string consulta = "Select dc.*, P.Nombre_Producto " +
-                "from Detalle_Compra as dc, Productos as p where dc.Cod_Compra_DC = 1 " +
+                "from Detalle_Compra as dc, Productos as p where dc.Cod_Compra_DC = " + codigo + 
                 "and dc.Cod_Producto_DC = p.Cod_Producto_PRO";
             //Obtengo la tabla con todos los usuarios
             GridView1.DataSource = aq.ObtenerDataTable(consulta);
