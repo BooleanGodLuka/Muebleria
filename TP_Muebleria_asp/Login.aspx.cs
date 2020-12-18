@@ -29,6 +29,7 @@ namespace TP_Muebleria_asp
                     mail2_lbl.Visible = true;
                     mail2_txt.Visible = true;
                     inicioS_btn.Visible = true;
+                    historial_btn.Visible = false;
 
                 }
                 else
@@ -42,6 +43,7 @@ namespace TP_Muebleria_asp
                     contraseña_txt.Visible = false;
                     cerrarU_btn.Visible = true;
                     editar_btn.Visible = true;
+                    historial_btn.Visible = true;
                 }
             }
         }
@@ -56,6 +58,11 @@ namespace TP_Muebleria_asp
         {
             
             Server.Transfer("Sign_int.aspx");
+        }
+
+        protected void historial_btn_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cliente_historial.aspx");
         }
 
         protected void crearU_btn_Click(object sender, EventArgs e)

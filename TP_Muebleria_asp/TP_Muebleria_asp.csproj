@@ -73,6 +73,7 @@
     <Content Include="Admin_Productos.aspx" />
     <Content Include="Admin_usuarios.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="Cliente_historial.aspx" />
     <Content Include="Home_admin.aspx" />
     <Content Include="Home_cliente.aspx" />
     <Content Include="Productos_alta.aspx" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="ClaseMaestra_SQL.cs" />
     <Compile Include="ClaseProducto.cs" />
+    <Compile Include="Cliente_historial.aspx.cs">
+      <DependentUpon>Cliente_historial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente_historial.aspx.designer.cs">
+      <DependentUpon>Cliente_historial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home_admin.aspx.cs">
       <DependentUpon>Home_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

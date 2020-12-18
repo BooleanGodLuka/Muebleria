@@ -42,7 +42,10 @@
         <asp:Button ID="inicioS_btn" runat="server" Text="Iniciar sesion" OnClick="inicioS_btn_Click" />
 
     </div>
-    
+
+    <div class="col-6" style="text-align:center">
+        <asp:Button ID="historial_btn" runat="server" Text="Historial" OnClick="historial_btn_click"/>
+    </div>
 
     <div class="col-6" style="text-align:center">
         <asp:Button ID="editar_btn" runat="server" Text="Editar Usuario" OnClick="editar_btn_Click"/>

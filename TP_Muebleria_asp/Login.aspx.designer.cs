@@ -105,6 +105,15 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Button inicioS_btn;
 
         /// <summary>
+        /// Control historial_btn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button historial_btn;
+
+        /// <summary>
         /// Control editar_btn.
         /// </summary>
         /// <remarks>
