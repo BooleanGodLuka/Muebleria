@@ -64,6 +64,7 @@ GO
 CREATE TABLE Compras
 (
 Cod_Compra_CO int identity (1,1) PRIMARY KEY NOT NULL,
+Cod_Usuario_CO int not null,
 Fecha smalldatetime NOT NULL,
 Precio_Total money NULL
 )
@@ -73,7 +74,6 @@ GO
 CREATE TABLE Detalle_Compra
 (
 Cod_Compra_DC int NOT NULL,
-Cod_Marca_DC char(6) NOT NULL,
 Cod_Producto_DC char(6) NOT NULL,
 Cantidad_Comprada int NOT NULL,
 Precio_Unitario money NULL
@@ -106,7 +106,13 @@ ADD CONSTRAINT FK_Detalle_CompraxProductos FOREIGN KEY (Cod_Producto_DC) REFEREN
 
 ALTER TABLE Productos
 ADD CONSTRAINT FK_Productos_Categorias FOREIGN KEY (Cod_categoria_prod) REFERENCES categorias (Cod_Categoria_CAT)
+
+ALTER TABLE Compras
+ADD CONSTRAINT FK_Comprasxusuario FOREIGN KEY (Cod_Usuario_CO) REFERENCES Usuarios (Cod_Usuario_US)
+
 GO
+
+
 
 --/////////// CARGA DE DATOS ///////////
 
@@ -181,17 +187,17 @@ select 'tu2','Luciano Gonzalo','Fredes','1234','41897127','1164009455','LGF@ghma
 select 'tu1','Alexis','Rodriguez','11110','41000000','1164009455','AR@ghmail.com',1 Union
 select 'tu3','Rocio','Favre','2222','40111111','1164009455','RF@ghmail.com',1 
 
-insert into Compras (Fecha,Precio_Total)
-select GETDATE(),0UNION
-select GETDATE(),0 
+insert into Compras (Cod_Usuario_CO,Fecha,Precio_Total)
+select 2,GETDATE(),0UNION
+select 2,GETDATE(),0 
 
 --delete from Compras
 
 --DBCC CHECKIDENT ( Compras, RESEED, 0 )
 
 
-insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cod_Marca_DC,Cantidad_Comprada,Precio_Unitario)
-select 1,'a14','m4',10,7500.00 
+insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cantidad_Comprada,Precio_Unitario)
+select 1,'a14',10,7500.00 
 GO
 
 --/////////////SP /////////////--
@@ -304,5 +310,4 @@ END
 GO*/
 
 
- Execute ProductosxCategoriasGetProductos @Cod_Categoria='cat1';
- GO
+ 
