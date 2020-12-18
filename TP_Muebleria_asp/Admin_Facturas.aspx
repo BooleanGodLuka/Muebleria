@@ -21,6 +21,14 @@
                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Cod_Compra_CO") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Ver mas">
+                            <EditItemTemplate>
+                                <asp:Button ID="ver_mas_btn_e" OnClick="ver_mas_btn_click" runat="server" Text="Ver mas" />
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Button ID="ver_mas_btn_v" OnClick="ver_mas_btn_click" runat="server" Text="Ver mas" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Fecha">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Fecha") %>'></asp:TextBox>
@@ -32,7 +40,7 @@
                         <asp:TemplateField HeaderText="Precio Total">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Precio_Total") %>' ReadOnly></asp:TextBox>
-                            </EditItemTemplate>
+                                </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Total") %>'></asp:Label>
                             </ItemTemplate>

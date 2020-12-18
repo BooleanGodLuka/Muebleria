@@ -32,6 +32,31 @@ namespace TP_Muebleria_asp
 
         }
 
+        protected void ver_mas_btn_click(object sender, EventArgs e)
+        {
+            Button aux = (Button)sender;
+            GridViewRow row = (GridViewRow)aux.NamingContainer;
+            int a = row.RowIndex;
+            string codigo = "";
+
+
+
+
+            Control ct = GridView1.Rows[row.RowIndex].FindControl("TextBox3");
+            if (ct == null)
+            {
+                ct = GridView1.Rows[row.RowIndex].FindControl("Label1");
+                codigo = ((Label)ct).Text;
+            }
+            else
+            {
+                codigo= ((TextBox)ct).Text;
+            }
+
+            Response.Redirect("Admin_Factura_Especifica.aspx?key=" + codigo);
+                        
+        }
+
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             // le digo que intente editar una fila que no existe para que no me modifique campos
@@ -54,6 +79,7 @@ namespace TP_Muebleria_asp
             string fecha = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
 
             string precio_total = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox7")).Text;
+
 
 
 
