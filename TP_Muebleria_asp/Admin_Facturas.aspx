@@ -21,7 +21,7 @@
                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Cod_Compra_CO") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Ver mas">
+                            <asp:TemplateField HeaderText="Ver mas">
                             <EditItemTemplate>
                                 <asp:Button ID="ver_mas_btn_e" OnClick="ver_mas_btn_click" runat="server" Text="Ver mas" />
                             </EditItemTemplate>

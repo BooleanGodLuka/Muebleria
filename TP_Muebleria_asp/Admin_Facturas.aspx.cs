@@ -50,12 +50,13 @@ namespace TP_Muebleria_asp
             }
             else
             {
-                codigo= ((TextBox)ct).Text;
+                codigo = ((TextBox)ct).Text;
             }
 
             Response.Redirect("Admin_Factura_Especifica.aspx?key=" + codigo);
-                        
+
         }
+
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
