@@ -22,6 +22,7 @@
                         <h5 class="card-title">Administrar Productos</h5>
                         <p class="card-text ">Alta, baja y modificacion de Productos</p>
                         <a href="<%Response.Write("Admin_Productos.aspx"); %>" class="btn btn-primary">Administrar</a>
+                        <a href="<%Response.Write("Productos_alta.aspx"); %>" class="btn btn-primary">Alta</a>
                     </div>
                 </div>
             </div>
