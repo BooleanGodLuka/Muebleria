@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace TP_Muebleria_asp
 {
@@ -46,35 +48,53 @@ namespace TP_Muebleria_asp
 
         protected void compra_btn_Click(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Write("<script>alert('Por favor, inicie sesion')</script>");
+            }
+
+
             Usuario us = (Usuario)Session["Usuario"];
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
             string tot;//= 0;
-            float temp = 0;
-            for (int i=0; i<carrito_grdv.Rows.Count; i++)
-            {
-                tot = carrito_grdv.Rows[i].Cells[3].Text;
-                temp += float.Parse(tot);
-                //tot += float.Parse(carrito_grdv.Rows[i].Cells[2].Text);
-            }
+            //float temp = 0;
+            //for (int i=0; i<carrito_grdv.Rows.Count; i++)
+            //{
+            //    tot = carrito_grdv.Rows[i].Cells[3].Text;
+            //    temp += float.Parse(tot);
+            //    //tot += float.Parse(carrito_grdv.Rows[i].Cells[2].Text);
+            //}
 
-            string total = temp.ToString();
-            string consulta = "insert into facturas (Cod_Usuario_F,Fecha_Venta,Cod_TipoP_F,Precio_Total) select '" + us.get_cod() + "'" +
-                ",'" + DateTime.Now + "','"+ total+"'";
+            string codigoUsuario = us.get_cod();
+            DateTime dia = DateTime.Now;
+
+
+            //string total = temp.ToString();
+            string consulta = "insert into compras (Cod_Usuario_CO,Fecha,Precio_Total) select '" + codigoUsuario + "'" +
+                ",'" + dia + "','"+ 0 +"'";
             clasita.ejecutar_comando(consulta);
 
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
 
-            for (int j = 0; j < carrito_grdv.Rows.Count; j++)
-            {
-                consulta = "Select MAX(Cod_Factura_F) From Facturas";
-                dt = clasita.ObtenerDataTable(consulta);
-                consulta = "Select Cod_Marca_PXM From ProductosxMarcas where Cod_Producto_PXM = '" + carrito_grdv.Rows[j].Cells[1].Text + "'";
-                dt2 = clasita.ObtenerDataTable(consulta);
+            consulta = "Select MAX(Cod_Compra_CO) From Compras";
+            dt = clasita.ObtenerDataTable(consulta);
 
-                consulta = "Insert into Detalle_Factura(Cod_Factura_DF,Cod_Producto_DF,Cod_Marca_DF,Cantidad_Vendida,Precio_Unitario)" +
-                            "select " + dt.Rows[0][0].ToString() + ",'" + carrito_grdv.Rows[j].Cells[0] +
-                            "','" +dt2.Rows[0][0].ToString() + "'" + carrito_grdv.Rows[j].Cells[2] + "'";
+            for (int fila = 0; fila < carrito_grdv.Rows.Count ; fila++)
+            {
+
+                
+                    string cod_Prodcuto = carrito_grdv.Rows[fila].Cells[1].Text;
+                    string cantidadComprada = carrito_grdv.Rows[fila].Cells[4].Text;
+                    //string precioUnitario = carrito_grdv.Rows[fila].Cells[3].Text;
+
+
+                string cod_Compra = dt.Rows[0][0].ToString();
+                
+
+                consulta = "Insert into Detalle_Compra(Cod_Compra_DC,Cod_Producto_DC,Cantidad_Comprada)" +
+                            "select " + cod_Compra + ",'" + cod_Prodcuto + "'," + cantidadComprada;
+
                 clasita.ejecutar_comando(consulta);             //aca la consulta manda cualquiera, por eso no se carga
 
 

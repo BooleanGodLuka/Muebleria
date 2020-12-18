@@ -89,6 +89,11 @@ namespace TP_Muebleria_asp
             DataTable aux = (DataTable)Session["Carrito"];
             cargar_producto();
 
+            if (Session["Usuario"] == null)
+            {
+                Response.Write("<script>alert('Por favor, inicie sesion')</script>");
+            }
+
             //DataRow precio = aux.NewRow();
             //precio = clasita.ObtenerFilaEspecifica("Select Precio_Unitario as Precio from Productos where Cod_Producto_PRO = '"+ prod.get_cod() + "'" );
 

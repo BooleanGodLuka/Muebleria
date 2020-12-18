@@ -83,7 +83,7 @@
     </tr>
        <tr>
       <th scope="row">Cantidad</th>
-        <td>  <asp:TextBox ID="Cantidad_txt" runat="server" type="number"></asp:TextBox> </td>
+        <td>  <asp:TextBox ID="Cantidad_txt" runat="server" type="number" Value="1" ></asp:TextBox> </td>
     </tr>
   </tbody>
 </table>
