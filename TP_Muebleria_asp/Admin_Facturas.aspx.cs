@@ -24,7 +24,8 @@ namespace TP_Muebleria_asp
         void cargargrid()
         {
 
-            string consulta = "select * from Compras";
+            string consulta = "  select c.*, u.Nombre from Compras as c, Usuarios as u " +
+                                "where c.Cod_Usuario_CO = u.Cod_Usuario_US";
             //Obtengo la tabla con todos los usuarios
             GridView1.DataSource = aq.ObtenerDataTable(consulta);
             // La muestro en Grid
