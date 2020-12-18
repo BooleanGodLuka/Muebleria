@@ -37,12 +37,20 @@
                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Usuario">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="nombre_txt" runat="server" Text='<%# Bind("Nombre") %>' ReadOnly></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="nombre_lbl" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio Total">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Precio_Total") %>' ReadOnly></asp:TextBox>
                                 </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Total") %>'></asp:Label>
+                                $<asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Total") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
