@@ -35,6 +35,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Reporte de productos</h5>
+                        <p class="card-text ">Reporte de las ganancias de cada producto </p>
+                        <a href="<%Response.Write("Admin_Reporte.aspx"); %>" class="btn btn-primary">Ver</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

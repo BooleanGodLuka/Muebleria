@@ -71,6 +71,7 @@
     <Content Include="Admin_Facturas.aspx" />
     <Content Include="Admin_Factura_Especifica.aspx" />
     <Content Include="Admin_Productos.aspx" />
+    <Content Include="Admin_Reporte.aspx" />
     <Content Include="Admin_usuarios.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Cliente_historial.aspx" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Admin_Productos.aspx.designer.cs">
       <DependentUpon>Admin_Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Reporte.aspx.cs">
+      <DependentUpon>Admin_Reporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Reporte.aspx.designer.cs">
+      <DependentUpon>Admin_Reporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_usuarios.aspx.cs">
       <DependentUpon>Admin_usuarios.aspx</DependentUpon>
