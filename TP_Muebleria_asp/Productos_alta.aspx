@@ -55,7 +55,7 @@
 
         <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Dar alta a Producto Nuevo</asp:LinkButton>
         <br />
-        <asp:Label ID="aclaracion_lbl" runat="server" ></asp:Label>
+        <asp:Label ID="aclaracion_lbl" style="font-size:20px" runat="server" ></asp:Label>
 
     </p>
 
