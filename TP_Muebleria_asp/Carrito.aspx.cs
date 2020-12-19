@@ -56,9 +56,9 @@ namespace TP_Muebleria_asp
 
             Usuario us = (Usuario)Session["Usuario"];
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
-            string tot;//= 0;
+            //string tot;//= 0;
             //float temp = 0;
-            //for (int i=0; i<carrito_grdv.Rows.Count; i++)
+            //for (int i = 0; i < carrito_grdv.Rows.Count; i++)
             //{
             //    tot = carrito_grdv.Rows[i].Cells[3].Text;
             //    temp += float.Parse(tot);

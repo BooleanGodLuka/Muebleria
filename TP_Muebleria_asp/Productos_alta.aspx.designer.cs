@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TP_Muebleria_asp {
-    
-    
-    public partial class WebForm1 {
-        
+namespace TP_Muebleria_asp
+{
+
+
+    public partial class WebForm1
+    {
+
         /// <summary>
         /// Control Label2.
         /// </summary>
@@ -20,7 +22,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control txtb_nompro.
         /// </summary>
@@ -29,7 +31,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_nompro;
-        
+
         /// <summary>
         /// Control Label3.
         /// </summary>
@@ -38,16 +40,34 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
-        /// Control txtb_Url.
+        /// Control txtb_Descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtb_Url;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtb_Descripcion;
+
+        /// <summary>
+        /// Control FotoProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FotoProducto;
+
+        /// <summary>
+        /// Control FileUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
         /// <summary>
         /// Control Label4.
         /// </summary>
@@ -56,7 +76,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control txtb_color.
         /// </summary>
@@ -65,7 +85,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_color;
-        
+
         /// <summary>
         /// Control Label5.
         /// </summary>
@@ -74,7 +94,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// Control txtb_tm.
         /// </summary>
@@ -83,7 +103,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_tm;
-        
+
         /// <summary>
         /// Control Label6.
         /// </summary>
@@ -92,7 +112,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// Control txtb_pu.
         /// </summary>
@@ -101,25 +121,25 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_pu;
-        
+
         /// <summary>
-        /// Control Label7.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
-        
+        protected global::System.Web.UI.WebControls.Label Label1;
+
         /// <summary>
-        /// Control txtb_codcat.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtb_codcat;
-        
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
         /// <summary>
         /// Control Label8.
         /// </summary>
@@ -128,7 +148,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// Control txtb_alto.
         /// </summary>
@@ -137,7 +157,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_alto;
-        
+
         /// <summary>
         /// Control Label9.
         /// </summary>
@@ -146,7 +166,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// Control txtb_largo.
         /// </summary>
@@ -155,7 +175,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_largo;
-        
+
         /// <summary>
         /// Control Label10.
         /// </summary>
@@ -164,7 +184,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-        
+
         /// <summary>
         /// Control txtb_ancho.
         /// </summary>
@@ -173,16 +193,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtb_ancho;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Control LinkButton2.
         /// </summary>
@@ -191,7 +202,7 @@ namespace TP_Muebleria_asp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
-        
+
         /// <summary>
         /// Control aclaracion_lbl.
         /// </summary>
