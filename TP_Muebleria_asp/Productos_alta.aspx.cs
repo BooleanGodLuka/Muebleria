@@ -35,19 +35,19 @@ namespace TP_Muebleria_asp
         {
             if (txtb_alto.Text != "")
             {
-                if (txtb_ancho.Text != null)
+                if (txtb_ancho.Text != "")
                 {
-                    if (txtb_color.Text != null)
+                    if (txtb_color.Text != "")
                     {
-                        if(txtb_Descripcion.Text != null)
+                        if(txtb_Descripcion.Text != "")
                         {
-                            if (txtb_largo.Text != null)
+                            if (txtb_largo.Text != "")
                             {
-                                if(txtb_nompro.Text != null)
+                                if(txtb_nompro.Text != "")
                                 {
-                                    if(txtb_pu.Text != null)
+                                    if(txtb_pu.Text != "")
                                     {
-                                        if(txtb_tm.Text != null)
+                                        if(txtb_tm.Text != "")
                                         {
                                             return true;
                                         }
