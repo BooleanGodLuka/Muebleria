@@ -65,7 +65,7 @@ namespace TP_Muebleria_asp
                 FileUpload1.SaveAs(Server.MapPath("/fotos/" + Url));
             Url = "/fotos/" + Url;
 
-            string consultita = "Select Cod_Categoria_CAT from Categorias where  Nombre_Categoria='living'";
+            string consultita = "Select Cod_Categoria_CAT from Categorias where  Nombre_Categoria='"+ Categoria + "'";
             DataRow Dar = clasita.ObtenerFilaEspecifica(consultita);
 
             int codigo = int.Parse(dr["CodProducto"].ToString())+1;
