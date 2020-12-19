@@ -16,13 +16,18 @@
                         <h4>Control de usuarios</h4>
                     </div>
                     <div class="card-body" style="text-align: center;">
+
+
+                        <div class ="col-12" style="text-align:center">
+                        <asp:Label ID="aclaracion_lbl" runat="server"></asp:Label>
+                        </div>
                        
                         <asp:GridView ID="GridView1" runat="server" width="22%" AllowPaging="True" DataKeyNames="Cod_Usuario_US"  AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" CellPadding="4" ForeColor="#333333" GridLines="Vertical" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Height="101px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Usuario">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_idUs" runat="server" Text='<%# Eval("Cod_Usuario_US") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_idUs" runat="server" readonly="true" Text='<%# Eval("Cod_Usuario_US") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_idUs" runat="server" Text='<%# Eval("Cod_Usuario_US") %>'></asp:Label>
@@ -30,15 +35,18 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Tipo Usuario">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_tipoUs" runat="server" Text='<%# Bind("Ctipo_Usuario_US") %>'></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownTipoUser" runat="server" > 
+                                            <asp:ListItem Value="Cliente">Cliente</asp:ListItem>
+                                            <asp:ListItem Value="Administrador">Administrador</asp:ListItem>
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_tipoUs" runat="server" Text='<%# Eval("Ctipo_Usuario_US") %>'></asp:Label>
+                                        <asp:Label ID="lbl_tipoUs" runat="server"  Text='<%# Eval("Tipo_Usuario") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_nombre" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" Text='<%# Bind("Nombre") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_nombre" runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
@@ -46,7 +54,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Apellido">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_apellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_apellido" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" Text='<%# Bind("Apellido") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_apellido" runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
@@ -54,7 +62,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_dni" runat="server" Text='<%# Bind("DNI") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_dni" runat="server" type="number" Text='<%# Bind("DNI") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_dni" runat="server" Text='<%# Eval("DNI") %>'></asp:Label>
@@ -70,7 +78,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Telefono">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_tel" runat="server" Text='<%# Bind("Telefono") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_tel" runat="server" type="number" Text='<%# Bind("Telefono") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_tel" runat="server" Text='<%# Eval("Telefono") %>'></asp:Label>
@@ -86,7 +94,12 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_estado" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownEstado" runat="server" > 
+                                            <asp:ListItem Value="True">True</asp:ListItem>
+                                            <asp:ListItem Value="False">False</asp:ListItem>
+                                        </asp:DropDownList>
+                                        
+                                        <%--<asp:TextBox ID="txt_estado" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>--%>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_estado" runat="server" Text='<%# Eval("Estado") %>'></asp:Label>

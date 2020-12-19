@@ -9,12 +9,19 @@
 
             <div class="center-block" style="float:left;">
 
+
+                <div class ="col-12" style="text-align:center">
+                        <asp:Label ID="aclaracion_lbl" runat="server"></asp:Label>
+                        </div>
+                       
+
+
                 <asp:GridView ID="GridView1" Style="border-style: none; border-color: inherit; border-width: medium; border-collapse: collapse; margin-left: 222px;" class="table" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" PageSize="5" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Width="16px" CellPadding="4" ForeColor="#333333" GridLines="None" Height="118px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Producto">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>' ReadOnly></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>' ReadOnly="true"></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Cod_Producto_PRO") %>'></asp:Label>
@@ -22,6 +29,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Categoria">
                             <EditItemTemplate>
+                                <%--<asp:DropDownList ID="DropDownList1" runat="server" > </asp:DropDownList>--%>
                                 <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Cod_categoria_Prod") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
@@ -39,7 +47,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Nombre">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Nombre_Producto") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" Text='<%# Bind("Nombre_Producto") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label4" runat="server" Text='<%# Bind("Nombre_Producto") %>'></asp:Label>
@@ -47,7 +55,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Color">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Color") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" Text='<%# Bind("Color") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label5" runat="server" Text='<%# Bind("Color") %>'></asp:Label>
@@ -55,7 +63,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Tipo Madera">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Tipo_Madera") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox6" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" Text='<%# Bind("Tipo_Madera") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label6" runat="server" Text='<%# Bind("Tipo_Madera") %>'></asp:Label>
@@ -63,7 +71,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox7" runat="server" type="number" Text='<%# Bind("Precio_Unitario") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label7" runat="server" Text='<%# Bind("Precio_Unitario") %>'></asp:Label>
@@ -98,7 +106,14 @@
                                 <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label11" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
+
+                                <asp:DropDownList ID="DropDownEstado" runat="server" > 
+                                            <asp:ListItem Value="True">True</asp:ListItem>
+                                            <asp:ListItem Value="False">False</asp:ListItem>
+                                        </asp:DropDownList>
+
+
+                                <%--<asp:Label ID="Label11" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>--%>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

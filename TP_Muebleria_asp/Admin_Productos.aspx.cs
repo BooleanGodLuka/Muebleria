@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,13 +21,31 @@ namespace TP_Muebleria_asp
             if (!IsPostBack)
             {
                 cargargrid();
+                aclaracion_lbl.Visible = false;
+            
 
             }
         }
 
 
+        protected void validar_numero(object sender, EventArgs e)
+        {
+            System.Web.UI.WebControls.TextBox texto = (System.Web.UI.WebControls.TextBox)sender;
+            string palabra = texto.Text;
+            if (palabra.Any(char.IsDigit))
+            {
+                texto.Text = "";
+                aclaracion_lbl.Text = "Hay Numeros en campos especificos de letras";
+                aclaracion_lbl.Visible = true;
+            }
+
+        }
+
+
         void cargargrid()
         {
+
+
 
             string consulta = "select Cod_Producto_PRO,Cod_categoria_Prod,Foto_Producto, Nombre_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado from Productos";
             //Obtengo la tabla con todos los usuarios
@@ -53,6 +72,14 @@ namespace TP_Muebleria_asp
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
+            DataTable dt = new DataTable();
+            string consultita = "";
+            consultita = "Select DISTINCT Tipo_Madera from Productos where Cod_categoria_Prod  = '" + Session["Categoria"].ToString() + "'";
+           
+
+
+
 
             string url = ((FileUpload)GridView1.Rows[e.RowIndex].FindControl("FileUpload1")).FileName;
 
@@ -64,6 +91,9 @@ namespace TP_Muebleria_asp
             string idProd = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox1")).Text;
             string idCate = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
 
+
+            //string idCate=((DropDownList)GridView1.Rows[e.RowIndex].FindControl("DropDownList1")).Text;
+
             string nombre = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox4")).Text;
             string color = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox5")).Text;
             string tipoM = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox6")).Text;
@@ -72,10 +102,18 @@ namespace TP_Muebleria_asp
             string alto = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox8")).Text;
             string ancho = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox9")).Text;
             string largo = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox10")).Text;
-            string estado = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox11")).Text;
+            string Estado = ((DropDownList)GridView1.Rows[e.RowIndex].FindControl("DropDownEstado")).SelectedValue.ToString();
+            //string estado = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox11")).Text;
 
 
 
+
+            int estadobit;
+            if (Estado == "True")
+            {
+                estadobit = 1;
+            }
+            else estadobit = 0;
 
             try
             {
@@ -84,7 +122,7 @@ namespace TP_Muebleria_asp
                 string consulta = "";
                 if (url == "/fotos/")
                 {
-                    consulta = "update Productos set Estado = '" + estado + "' ,Nombre_Producto = '" + nombre 
+                    consulta = "update Productos set Estado = '" + estadobit + "' ,Nombre_Producto = '" + nombre 
                     + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
                     + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
                      + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
@@ -93,7 +131,7 @@ namespace TP_Muebleria_asp
                 }
                 else
                 {
-                    consulta = "update Productos set Estado = '" + estado + "' ,Foto_Producto = '" + url
+                    consulta = "update Productos set Estado = '" + estadobit + "' ,Foto_Producto = '" + url
                     + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
                     + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
                      + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo

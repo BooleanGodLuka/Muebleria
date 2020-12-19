@@ -7,11 +7,22 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TP_Muebleria_asp {
-    
-    
-    public partial class Admin_Productos {
-        
+namespace TP_Muebleria_asp
+{
+
+
+    public partial class Admin_Productos
+    {
+
+        /// <summary>
+        /// Control aclaracion_lbl.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label aclaracion_lbl;
+
         /// <summary>
         /// Control GridView1.
         /// </summary>
