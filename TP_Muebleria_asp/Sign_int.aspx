@@ -15,25 +15,25 @@
     Nombre:    
     </div>
     <div class ="col-6" style="text-align:center">
-    <asp:TextBox ID="nombre_txt" runat="server"></asp:TextBox>
+    <asp:TextBox ID="nombre_txt" runat="server" OnTextChanged="validar_numero" AutoPostBack="true" ></asp:TextBox>
     </div>
     <div class ="col-6" style="text-align:center">
     Apellido:    
     </div>
     <div class ="col-6" style="text-align:center">
-    <asp:TextBox ID="apellido_txt" runat="server"></asp:TextBox>
+    <asp:TextBox ID="apellido_txt" runat="server" OnTextChanged="validar_numero" AutoPostBack="true"></asp:TextBox>
     </div>
     <div class ="col-6" style="text-align:center">
     DNI:    
     </div>
     <div class ="col-6" style="text-align:center">
-    <asp:TextBox ID="dni_txt" runat="server"></asp:TextBox>
+    <asp:TextBox ID="dni_txt" type="number" runat="server"></asp:TextBox>
     </div>
     <div class ="col-6" style="text-align:center">
     Telefono:    
     </div>
     <div class ="col-6" style="text-align:center">
-        <asp:TextBox ID="tel_txt" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tel_txt" type="number" runat="server"></asp:TextBox>
     </div>
     <div class ="col-6" style="text-align:center">
     E-Mail:    

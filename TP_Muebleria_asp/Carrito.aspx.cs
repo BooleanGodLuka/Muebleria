@@ -101,7 +101,7 @@ namespace TP_Muebleria_asp
             }//MAX(Cod_Factura_F)
 
             Session["Carrito"] = null;
-            Response.Write("<script>alert('Compra realizada! (no esta validado todavia)')</script>");
+            Response.Write("<script>alert('Compra realizada!')</script>");
             Server.Transfer("Home_cliente.aspx");
 
         }

@@ -31,7 +31,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Fecha">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Fecha") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox2" type="date" runat="server" Text='<%# Bind("Fecha") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>

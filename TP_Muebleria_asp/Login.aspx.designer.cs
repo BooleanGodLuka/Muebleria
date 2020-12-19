@@ -24,33 +24,6 @@ namespace TP_Muebleria_asp
         protected global::System.Web.UI.WebControls.Label aclaracion_lbl;
 
         /// <summary>
-        /// Control cerrarU_btn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cerrarU_btn;
-
-        /// <summary>
-        /// Control mail_lbl.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mail_lbl;
-
-        /// <summary>
-        /// Control mail_txt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mail_txt;
-
-        /// <summary>
         /// Control mail2_lbl.
         /// </summary>
         /// <remarks>
@@ -121,5 +94,14 @@ namespace TP_Muebleria_asp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button editar_btn;
+
+        /// <summary>
+        /// Control cerrarU_btn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cerrarU_btn;
     }
 }

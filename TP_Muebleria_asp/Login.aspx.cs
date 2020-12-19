@@ -22,8 +22,6 @@ namespace TP_Muebleria_asp
                     aclaracion_lbl.Visible = false;
                     editar_btn.Visible = false;
                     cerrarU_btn.Visible = false;
-                    mail_lbl.Visible = true;
-                    mail_txt.Visible = true;
                     contraseña_lbl.Visible = true;
                     contraseña_txt.Visible = true;
                     mail2_lbl.Visible = true;
@@ -34,13 +32,12 @@ namespace TP_Muebleria_asp
                 }
                 else
                 {                    
-                    mail_lbl.Visible = false;
-                    mail_txt.Visible = false;
                     mail2_lbl.Visible = false;
                     mail2_txt.Visible = false;
                     inicioS_btn.Visible = false;
                     contraseña_lbl.Visible = false;
                     contraseña_txt.Visible = false;
+                    crearU_btn.Visible = false;
                     cerrarU_btn.Visible = true;
                     editar_btn.Visible = true;
                     historial_btn.Visible = true;

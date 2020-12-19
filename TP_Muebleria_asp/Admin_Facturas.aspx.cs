@@ -83,24 +83,26 @@ namespace TP_Muebleria_asp
             string precio_total = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox7")).Text;
 
 
-
-
-            try
+            if (fecha != "")
             {
 
-                //Aplico el update a la tabla usuarios con los datos obtenidos
-                string consulta = "";
+                try
+                {
+
+                    //Aplico el update a la tabla usuarios con los datos obtenidos
+                    string consulta = "";
 
                     consulta = "update Compras set Fecha = '" + fecha + "' where Cod_Compra_CO = " + idComp;
 
-                
 
-                aq.aplicarconsultasql(consulta);
 
-            }
-            catch (Exception)
-            {
+                    aq.aplicarconsultasql(consulta);
 
+                }
+                catch (Exception)
+                {
+
+                }
             }
             // le digo que intente editar una fila que no existe para que no me modifique campos
             GridView1.EditIndex = -1;

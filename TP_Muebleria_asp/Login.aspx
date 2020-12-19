@@ -4,19 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
     <div class="col-12" style="text-align:center">
-        <asp:Label ID="aclaracion_lbl" runat="server" Text="Sesion ya iniciada"></asp:Label>
         <br />
-        <asp:Button ID="cerrarU_btn" runat="server" Text="Cerrar Sesion" OnClick="cerrarU_btn_Click" />
+        <br />
+        <br />
+        <asp:Label ID="aclaracion_lbl" runat="server" Text="Sesion ya iniciada"></asp:Label>
+        
     </div>
-    
-    <div class="col-6" style="text-align:center">
-        <asp:Label ID="mail_lbl" runat="server" Text="Correo electronico"></asp:Label>
 
-    </div>
-    <div class="col-6" style="text-align:center">
-        <asp:TextBox ID="mail_txt" runat="server"></asp:TextBox>
-
-    </div>
 
      <div class="col-6" style="text-align:center">
         <asp:Label ID="mail2_lbl" runat="server" Text="Correo electronico"></asp:Label>
@@ -50,6 +44,11 @@
     <div class="col-6" style="text-align:center">
         <asp:Button ID="editar_btn" runat="server" Text="Editar Usuario" OnClick="editar_btn_Click"/>
     </div>
+
+    <div class="col-6" style="text-align:center">
+        <asp:Button ID="cerrarU_btn" runat="server" Text="Cerrar Sesion" OnClick="cerrarU_btn_Click" />
+    </div>        
+        
 
 
     </div>

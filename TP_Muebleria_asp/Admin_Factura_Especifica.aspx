@@ -30,9 +30,9 @@
                                 <asp:Label ID="producto_lbl" runat="server" Text='<%# Bind("Nombre_Producto") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Fecha">
+                        <asp:TemplateField HeaderText="Cantidad vendida">
                             <EditItemTemplate>
-                                <asp:TextBox ID="cantidad_txt" runat="server" Text='<%# Bind("Cantidad_Comprada") %>'></asp:TextBox>
+                                <asp:TextBox ID="cantidad_txt" runat="server" type="number" Text='<%# Bind("Cantidad_Comprada") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="cantidad_lbl" runat="server" Text='<%# Bind("Cantidad_Comprada") %>'></asp:Label>

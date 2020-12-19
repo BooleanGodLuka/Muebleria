@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TP_Muebleria_asp
 {
@@ -30,6 +32,19 @@ namespace TP_Muebleria_asp
                 aclaracion_lbl.Visible = false;
 
             }
+        }
+
+        protected void validar_numero (object sender, EventArgs e)
+        {
+            System.Web.UI.WebControls.TextBox texto = (System.Web.UI.WebControls.TextBox)sender;
+            string palabra = texto.Text; 
+            if (palabra.Any(char.IsDigit))
+            {
+                texto.Text = "";
+                aclaracion_lbl.Text = "Los nombres y apellidos no pueden contener numeros";
+                aclaracion_lbl.Visible = true;
+            }
+
         }
 
         protected bool val_rellenado ()
@@ -119,6 +134,7 @@ namespace TP_Muebleria_asp
                     us.set_cod(cod["codigo"].ToString());
                    
                     Session["usuario"] = us;
+                    Response.Write("<script>alert('Usuario creado, bienvenido !')</script>");
                     Server.Transfer("Login.aspx");
 
                 }

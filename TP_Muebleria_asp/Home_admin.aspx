@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Administrar Compras</h5>
-                        <p class="card-text ">Alta, baja y modificacion de Productos</p>
+                        <p class="card-text ">Visualizacion y modificacion de las Compras</p>
                         <a href="<%Response.Write("Admin_Facturas.aspx"); %>" class="btn btn-primary">Administrar</a>
                     </div>
                 </div>
