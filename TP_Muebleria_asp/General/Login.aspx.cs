@@ -89,7 +89,7 @@ namespace TP_Muebleria_asp
             DataTable dt = new DataTable();
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
             Usuario us = new Usuario();
-            string consulta =  "Select * from Usuarios where Email = '" + mail2_txt.Text + "' AND Contraseña = '" + contraseña_txt.Text + "'";
+            string consulta =  "Select * from Usuarios where Email = '" + mail2_txt.Text + "' AND Contraseña = '" + contraseña_txt.Text + "' and Estado = 1";
             dt = clasita.ObtenerDataTable(consulta);
             //DataRow dr = clasita.ObtenerFilaEspecifica(consulta);
 

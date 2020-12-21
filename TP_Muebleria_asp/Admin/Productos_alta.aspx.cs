@@ -16,7 +16,7 @@ namespace TP_Muebleria_asp
             DataTable dt = new DataTable();
             string consulta = "";
 
-            consulta = " Select Nombre_Categoria from Categorias ";
+            consulta = " Select Distinct Nombre_Categoria from Categorias ";
 
             dt = clasita.ObtenerDataTable(consulta);
 

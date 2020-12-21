@@ -49,17 +49,17 @@ namespace TP_Muebleria_asp
 
         protected bool val_rellenado ()
         {
-            if (nombre_txt.Text != null)
+            if (nombre_txt.Text != "")
             {
-                if (apellido_txt.Text != null)
+                if (apellido_txt.Text != "")
                 {
-                    if (dni_txt.Text != null)
+                    if (dni_txt.Text != "")
                     {
-                        if (tel_txt.Text != null)
+                        if (tel_txt.Text != "")
                         {
-                            if (mail_txt.Text != null)
+                            if (mail_txt.Text != "")
                             {
-                                if (contra_txt.Text != null)
+                                if (contra_txt.Text != "")
                                 {
                                     return true;
                                 }
