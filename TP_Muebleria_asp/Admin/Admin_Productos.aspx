@@ -30,10 +30,10 @@
                         <asp:TemplateField HeaderText="Categoria">
                             <EditItemTemplate>
                                 <%--<asp:DropDownList ID="DropDownList1" runat="server" > </asp:DropDownList>--%>
-                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Cod_categoria_Prod") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Nombre_Categoria") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Cod_categoria_Prod") %>'></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Nombre_Categoria") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Imagen">
@@ -103,17 +103,16 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Estado">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
 
-                                <asp:DropDownList ID="DropDownEstado" runat="server" > 
+                                        <asp:DropDownList ID="DropDownEstado" runat="server" > 
                                             <asp:ListItem Value="True">True</asp:ListItem>
                                             <asp:ListItem Value="False">False</asp:ListItem>
                                         </asp:DropDownList>
 
-
-                                <%--<asp:Label ID="Label11" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>--%>
+                                <%--<asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>--%>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label11" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

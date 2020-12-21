@@ -44,7 +44,7 @@
 
         if (Convert.ToString(Request.QueryString["key"]) == null) {
             
-                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'";
+                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "' and Estado = 1 ";
             
 
 
@@ -55,11 +55,11 @@
             if (Convert.ToString(Request.QueryString["key"]).Substring(0,1) == "B") {
 
                 busqueda = Convert.ToString(Request.QueryString["key"]).Substring(1);
-                consulta = "Select * from Productos where Nombre_Producto like '%" + busqueda + "%'";
+                consulta = "Select * from Productos where Nombre_Producto like '%" + busqueda + "%' and Estado = 1 ";
             }else
             {
                 busqueda = Convert.ToString(Request.QueryString["key"]).Substring(1);
-                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "'"+
+                consulta = "Select * from Productos where Cod_categoria_Prod = '" + Session["Categoria"].ToString() + "' and Estado = 1 "+
                 busqueda;
             }
 

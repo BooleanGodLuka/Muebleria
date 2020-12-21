@@ -47,7 +47,7 @@ namespace TP_Muebleria_asp
 
 
 
-            string consulta = "select Cod_Producto_PRO,Cod_categoria_Prod,Foto_Producto, Nombre_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado from Productos";
+            string consulta = "select Cod_Producto_PRO,Nombre_Categoria,Foto_Producto, Nombre_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado from Productos inner join Categorias on Cod_Categoria_CAT = Cod_categoria_Prod";
             //Obtengo la tabla con todos los usuarios
             GridView1.DataSource = aq.ObtenerDataTable(consulta);
             // La muestro en Grid
@@ -73,10 +73,9 @@ namespace TP_Muebleria_asp
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             ClaseMaestra_SQL clasita = new ClaseMaestra_SQL();
-            DataTable dt = new DataTable();
-            string consultita = "";
-            consultita = "Select DISTINCT Tipo_Madera from Productos where Cod_categoria_Prod  = '" + Session["Categoria"].ToString() + "'";
            
+            string consultita = "";
+            
 
 
 
@@ -89,7 +88,12 @@ namespace TP_Muebleria_asp
 
                        
             string idProd = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox1")).Text;
-            string idCate = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
+            string NombreCat = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
+
+
+            consultita = "select Cod_Categoria_CAT from Categorias where Nombre_Categoria = '" + NombreCat + "'";
+
+            DataRow dr = clasita.ObtenerFilaEspecifica(consultita);
 
 
             //string idCate=((DropDownList)GridView1.Rows[e.RowIndex].FindControl("DropDownList1")).Text;
@@ -108,6 +112,7 @@ namespace TP_Muebleria_asp
 
 
 
+
             int estadobit;
             if (Estado == "True")
             {
@@ -122,21 +127,45 @@ namespace TP_Muebleria_asp
                 string consulta = "";
                 if (url == "/fotos/")
                 {
-                    consulta = "update Productos set Estado = '" + estadobit + "' ,Nombre_Producto = '" + nombre 
-                    + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
-                    + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
+                    if (precio == "")
+                    {
+                        consulta = "update Productos set Estado = '" + estadobit + "' ,Nombre_Producto = '" + nombre
+                     + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                     + "' ,Alto = '" + alto
                      + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
-                     + "' where Cod_Producto_PRO = '" + idProd + "'";
+                     + "',Cod_Categoria_Prod = '" + dr["Cod_Categoria_Cat"] + "' where Cod_Producto_PRO = '" + idProd + "'";
 
+
+                    }
+                    else
+                    {
+                        consulta = "update Productos set Estado = '" + estadobit + "' ,Nombre_Producto = '" + nombre
+                        + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                        + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
+                         + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
+                         + "',Cod_Categoria_Prod = '" + dr["Cod_Categoria_Cat"] + "' where Cod_Producto_PRO = '" + idProd + "'";
+                    }
                 }
                 else
                 {
-                    consulta = "update Productos set Estado = '" + estadobit + "' ,Foto_Producto = '" + url
-                    + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
-                    + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
-                     + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
-                     + "' where Cod_Producto_PRO = '" + idProd + "'";
+                    if (precio == "")
+                    {
 
+                        consulta = "update Productos set Estado = '" + estadobit + "' ,Foto_Producto = '" + url
+                        + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                        + "' ,Alto = '" + alto
+                        + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
+                        + "',Cod_Categoria_Prod = '" + dr["Cod_Categoria_Cat"] + "' where Cod_Producto_PRO = '" + idProd + "'";
+
+                    }
+                    else
+                    {
+                        consulta = "update Productos set Estado = '" + estadobit + "' ,Foto_Producto = '" + url
+                        + "' ,Nombre_Producto = '" + nombre + "' ,Color = '" + color + "' ,Tipo_Madera = '" + tipoM
+                        + "' ,Precio_Unitario = " + precio + " ,Alto = '" + alto
+                        + "' ,Ancho = '" + ancho + "' ,Largo = '" + largo
+                        + "',Cod_Categoria_Prod = '" + dr["Cod_Categoria_Cat"] + "' where Cod_Producto_PRO = '" + idProd + "'";
+                    }
                 }
 
                 aq.aplicarconsultasql(consulta);
