@@ -130,30 +130,30 @@ select'cat4','Living'UNION
 select'cat5','Exterior'
 
 insert into Productos (Cod_Producto_PRO, Nombre_Producto,Descripcion,Foto_Producto,Color,Tipo_Madera,Precio_Unitario,Alto,Ancho,Largo,Estado,Cod_categoria_Prod)
-select 'a1','Sillón Barcelona','dos cuerpos, tapizado con pana','fotos\2219190.jpg','beige','pino',18000,80,150,80,1,'cat4'UNION
-select 'a2','Sillones Barcelona','dos cuerpos, tapizado con pana','fotos\2219182.jpg','gris','pino',19000,80,150,80,1,'cat4'UNION
-select 'a4','Sillón Concept','tres cuerpos, tapizado Ecocuero','fotos\1790994.jpg','marrón','pino',30300,73,220,90,1,'cat4'UNION
-select 'a5','Sillón Aero','tres cuerpos, tapizado con pana','fotos\2437066.jpg','gris','pino',27000,73,220,80,1,'cat4'UNION
-select 'a6','Estantería Oslo','cinco estantes y un cajón','fotos\2168707.jpg','blanco','pino',6380,180,55,48,1,'cat2'UNION
-select 'a7','Biblioteca París','Diseño romántico con molduras','fotos\2343940.jpg','blanco','aglomerado',9800,200,96,37,1,'cat3'UNION
-select 'a8','Cómoda Docta','Cuatro cajones','fotos\3009188.jpg','caoba','pino',15200,87,103,47,1,'cat1'UNION
-select 'a9','Mesa de Luz Docta','dos cajones','fotos\3009280.jpg','caoba','pino',5900,84,94,40,1,'cat1'UNION
-select 'a10','Mesa de Luz Eco','un cajon, una puerta','fotos\3009179_1.jpg','caoba','pino',3500,52,57,40,1,'cat1'UNION
-select 'a11','Cama Docta dos plazas','dos plazas','fotos\3009197.jpg','caoba','pino',8800,43,140,190,1,'cat1'UNION
-select 'a12','Cama Eco una plaza','una plaza','fotos\3011217_1.jpg','caoba','pino',5200,43,80,190,1,'cat1'UNION
-select 'a13','Placard Clásico','interior laqueado','fotos\placard_de_algarrobo_1_50x2_40_mts_1_imagen1.jpg','algarrobo','marrón',17000,240,150,60,1,'cat1'UNION
-select 'a14','Silla Campestre','estilo campo','fotos\silla_de_pino_estilo_campo_4_imagen1.jpg','pino','caoba',750,100,50,40,1,'cat3'UNION
-select 'a15','Silla para Bebe','silla de pino encolada','fotos\silla_de_comer_para_bebe_campo_imagen1.jpg','pino','marrón',700,155,55,55,1,'cat3'UNION
-select 'a16','Modular Cristalero','modular de pino estilo campo encolado encastrado macizo','fotos\modular_cristalero_estilo_campo_de_pino_macizo_0_70_mts_3_imagen1.jpg','marrón','pino',3500,200,80,70,1,'cat3'UNION
-select 'a17','Mesa TV','Mesa para TV hasta 60¨ con ruedas incorporadas espacio para dispositivos','fotos\rack_mesa_tv_lcd_led_quartzo_imagen1.jpg','Marrón Marrón ocre','ebano',3599,66,125,40,1,'cat4'UNION
-select 'a18','Biblioteca Campestre','biblioteca campestre reforzada capacidad 100 libros aproximadamente','fotos\biblioteca_campestre_alta_imagen1.jpg','Marrón','pino',3899,200,80,39,1,'cat4'UNION
-select 'a19','Mesa comedor','mesa comedor cuadrada uniones reforzadas','fotos\mesa_estilo_campo_cuadrada_1_20x1_20_mt_3_imagen1.jpg','Marrón claro','pino',3900,80,120,120,1,'cat3'UNION
-select 'a20','Mesa de campo','mesa de campo resistente para exterior','fotos\mesa_estilo_campo_varias_medidas_1_20_1_40_1_60_1_80_2_00_pa_imagen1.jpg','Marrón','nogal',4699,80,120,160,1,'cat5'UNION
-select 'a21','Hamaca relax dallas','Hamaca tipo paraguaya','fotos\hamaca-de-madera-relax-dallas-3m-verde-39045933z0-03031767.jpg','Marrón','secoya',6499,200,70,300,1,'cat5'UNION
-select 'a22','Reposera relax','reposera tipo persiana plegable con almohadon','fotos\hamaca-madera-persiana-6231145z0-00000067.jpg','Marrón','balau',2600,65,55,90,1,'cat5'UNION
-select 'a23','Cama ranchera una plaza','Cama estilo campo reforzada','fotos\cama_cruz_3x3_imagen1.jpg','Marrón claro','pino',4000,90,80,190,1,'cat1'UNION
-select 'a24','Cama marinera','cama estilo campo marinera o cucheta reforzada con escalera','fotos\cama_cucheta_superpuesta_eco_imagen1.jpg','Marrón','pino',9000,320,80,190,1,'cat1'UNION
-select 'a25','Alacena triple','Alacena con tres puertas tipo campo','fotos\alacena297592659_2.jpg','Marrón','roble',15000,195,170,55,1,'cat2'
+select 'a1','Sillón Barcelona','dos cuerpos, tapizado con pana','/fotos/2219190.jpg','beige','pino',18000,80,150,80,1,'cat4'UNION
+select 'a2','Sillones Barcelona','dos cuerpos, tapizado con pana','/fotos/2219182.jpg','gris','pino',19000,80,150,80,1,'cat4'UNION
+select 'a4','Sillón Concept','tres cuerpos, tapizado Ecocuero','/fotos/1790994.jpg','marrón','pino',30300,73,220,90,1,'cat4'UNION
+select 'a5','Sillón Aero','tres cuerpos, tapizado con pana','/fotos/2437066.jpg','gris','pino',27000,73,220,80,1,'cat4'UNION
+select 'a6','Estantería Oslo','cinco estantes y un cajón','/fotos/2168707.jpg','blanco','pino',6380,180,55,48,1,'cat2'UNION
+select 'a7','Biblioteca París','Diseño romántico con molduras','/fotos/2343940.jpg','blanco','aglomerado',9800,200,96,37,1,'cat3'UNION
+select 'a8','Cómoda Docta','Cuatro cajones','/fotos/3009188.jpg','caoba','pino',15200,87,103,47,1,'cat1'UNION
+select 'a9','Mesa de Luz Docta','dos cajones','/fotos/3009280.jpg','caoba','pino',5900,84,94,40,1,'cat1'UNION
+select 'a10','Mesa de Luz Eco','un cajon, una puerta','/fotos/3009179_1.jpg','caoba','pino',3500,52,57,40,1,'cat1'UNION
+select 'a11','Cama Docta dos plazas','dos plazas','/fotos/3009197.jpg','caoba','pino',8800,43,140,190,1,'cat1'UNION
+select 'a12','Cama Eco una plaza','una plaza','/fotos/3011217_1.jpg','caoba','pino',5200,43,80,190,1,'cat1'UNION
+select 'a13','Placard Clásico','interior laqueado','/fotos/placard_de_algarrobo_1_50x2_40_mts_1_imagen1.jpg','algarrobo','marrón',17000,240,150,60,1,'cat1'UNION
+select 'a14','Silla Campestre','estilo campo','/fotos/silla_de_pino_estilo_campo_4_imagen1.jpg','pino','caoba',750,100,50,40,1,'cat3'UNION
+select 'a15','Silla para Bebe','silla de pino encolada','/fotos/silla_de_comer_para_bebe_campo_imagen1.jpg','pino','marrón',700,155,55,55,1,'cat3'UNION
+select 'a16','Modular Cristalero','modular de pino estilo campo encolado encastrado macizo','/fotos/modular_cristalero_estilo_campo_de_pino_macizo_0_70_mts_3_imagen1.jpg','marrón','pino',3500,200,80,70,1,'cat3'UNION
+select 'a17','Mesa TV','Mesa para TV hasta 60¨ con ruedas incorporadas espacio para dispositivos','/fotos/rack_mesa_tv_lcd_led_quartzo_imagen1.jpg','Marrón Marrón ocre','ebano',3599,66,125,40,1,'cat4'UNION
+select 'a18','Biblioteca Campestre','biblioteca campestre reforzada capacidad 100 libros aproximadamente','/fotos/biblioteca_campestre_alta_imagen1.jpg','Marrón','pino',3899,200,80,39,1,'cat4'UNION
+select 'a19','Mesa comedor','mesa comedor cuadrada uniones reforzadas','/fotos/mesa_estilo_campo_cuadrada_1_20x1_20_mt_3_imagen1.jpg','Marrón claro','pino',3900,80,120,120,1,'cat3'UNION
+select 'a20','Mesa de campo','mesa de campo resistente para exterior','/fotos/mesa_estilo_campo_varias_medidas_1_20_1_40_1_60_1_80_2_00_pa_imagen1.jpg','Marrón','nogal',4699,80,120,160,1,'cat5'UNION
+select 'a21','Hamaca relax dallas','Hamaca tipo paraguaya','/fotos/hamaca-de-madera-relax-dallas-3m-verde-39045933z0-03031767.jpg','Marrón','secoya',6499,200,70,300,1,'cat5'UNION
+select 'a22','Reposera relax','reposera tipo persiana plegable con almohadon','/fotos/hamaca-madera-persiana-6231145z0-00000067.jpg','Marrón','balau',2600,65,55,90,1,'cat5'UNION
+select 'a23','Cama ranchera una plaza','Cama estilo campo reforzada','/fotos/cama_cruz_3x3_imagen1.jpg','Marrón claro','pino',4000,90,80,190,1,'cat1'UNION
+select 'a24','Cama marinera','cama estilo campo marinera o cucheta reforzada con escalera','/fotos/cama_cucheta_superpuesta_eco_imagen1.jpg','Marrón','pino',9000,320,80,190,1,'cat1'UNION
+select 'a25','Alacena triple','Alacena con tres puertas tipo campo','/fotos/alacena297592659_2.jpg','Marrón','roble',15000,195,170,55,1,'cat2'
 
 
 insert into CatxPro (Cod_Producto_CxP, Cod_Categoria_CxP)
@@ -264,7 +264,7 @@ where Cod_Marca_PxM = @CodMarca and Cod_Producto_PxM = @CodProducto
 END
 GO*/
 
-ALTER TRIGGER TotalizarCompra
+Create TRIGGER TotalizarCompra
 ON Detalle_Compra
 AFTER INSERT
 AS
