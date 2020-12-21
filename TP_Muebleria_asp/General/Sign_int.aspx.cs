@@ -135,7 +135,7 @@ namespace TP_Muebleria_asp
                    
                     Session["usuario"] = us;
                     Response.Write("<script>alert('Usuario creado, bienvenido !')</script>");
-                    Server.Transfer("Login.aspx");
+                    Server.Transfer("/General/Login.aspx");
 
                 }
 
@@ -178,7 +178,7 @@ namespace TP_Muebleria_asp
                 }
 
                     Session["usuario"] = us;
-                    Server.Transfer("Home_cliente.aspx");
+                    Server.Transfer("/Cliente/Home_cliente.aspx");
 
                 
 

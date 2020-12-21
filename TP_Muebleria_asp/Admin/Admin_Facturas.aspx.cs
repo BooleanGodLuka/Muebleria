@@ -54,7 +54,7 @@ namespace TP_Muebleria_asp
                 codigo = ((TextBox)ct).Text;
             }
 
-            Response.Redirect("Admin_Factura_Especifica.aspx?key=" + codigo);
+            Response.Redirect("/Admin/Admin_Factura_Especifica.aspx?key=" + codigo);
 
         }
 

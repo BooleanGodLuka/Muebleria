@@ -72,10 +72,10 @@ namespace TP_Muebleria_asp
         {
 
 
-            DropDownList DdlCantidad = GridView1.Rows[e.RowIndex].FindControl("DropDownEstado") as DropDownList;
-            ListItem i;
-            i = new ListItem("Nuevo leon", "1");
-            DdlCantidad.Items.Add(i);
+            //DropDownList DdlCantidad = GridView1.Rows[e.RowIndex].FindControl("DropDownEstado") as DropDownList;
+            //ListItem i;
+            //i = new ListItem("Nuevo leon", "1");
+            //DdlCantidad.Items.Add(i);
                     //DdlCantidad.Items.Add("true");
                     //DdlCantidad.Items.Add("False");
 

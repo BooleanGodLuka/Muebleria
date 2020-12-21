@@ -68,114 +68,114 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin_Facturas.aspx" />
-    <Content Include="Admin_Factura_Especifica.aspx" />
-    <Content Include="Admin_Productos.aspx" />
-    <Content Include="Admin_Reporte.aspx" />
-    <Content Include="Admin_usuarios.aspx" />
-    <Content Include="Carrito.aspx" />
-    <Content Include="Cliente_historial.aspx" />
-    <Content Include="Home_admin.aspx" />
-    <Content Include="Home_cliente.aspx" />
-    <Content Include="Productos_alta.aspx" />
-    <Content Include="Producto_especifico.aspx" />
-    <Content Include="Productos_browser.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="Sign_int.aspx" />
+    <Content Include="Admin\Admin_Facturas.aspx" />
+    <Content Include="Admin\Admin_Factura_Especifica.aspx" />
+    <Content Include="Admin\Admin_Productos.aspx" />
+    <Content Include="Admin\Admin_Reporte.aspx" />
+    <Content Include="Admin\Admin_usuarios.aspx" />
+    <Content Include="Cliente\Carrito.aspx" />
+    <Content Include="Cliente\Cliente_historial.aspx" />
+    <Content Include="Admin\Home_admin.aspx" />
+    <Content Include="Cliente\Home_cliente.aspx" />
+    <Content Include="Admin\Productos_alta.aspx" />
+    <Content Include="Cliente\Producto_especifico.aspx" />
+    <Content Include="Cliente\Productos_browser.aspx" />
+    <Content Include="General\Login.aspx" />
+    <Content Include="General\Sign_int.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_Facturas.aspx.cs">
+    <Compile Include="Admin\Admin_Facturas.aspx.cs">
       <DependentUpon>Admin_Facturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin_Facturas.aspx.designer.cs">
+    <Compile Include="Admin\Admin_Facturas.aspx.designer.cs">
       <DependentUpon>Admin_Facturas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Factura_Especifica.aspx.cs">
+    <Compile Include="Admin\Admin_Factura_Especifica.aspx.cs">
       <DependentUpon>Admin_Factura_Especifica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin_Factura_Especifica.aspx.designer.cs">
+    <Compile Include="Admin\Admin_Factura_Especifica.aspx.designer.cs">
       <DependentUpon>Admin_Factura_Especifica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Productos.aspx.cs">
+    <Compile Include="Admin\Admin_Productos.aspx.cs">
       <DependentUpon>Admin_Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin_Productos.aspx.designer.cs">
+    <Compile Include="Admin\Admin_Productos.aspx.designer.cs">
       <DependentUpon>Admin_Productos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Reporte.aspx.cs">
+    <Compile Include="Admin\Admin_Reporte.aspx.cs">
       <DependentUpon>Admin_Reporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin_Reporte.aspx.designer.cs">
+    <Compile Include="Admin\Admin_Reporte.aspx.designer.cs">
       <DependentUpon>Admin_Reporte.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin_usuarios.aspx.cs">
+    <Compile Include="Admin\Admin_usuarios.aspx.cs">
       <DependentUpon>Admin_usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin_usuarios.aspx.designer.cs">
+    <Compile Include="Admin\Admin_usuarios.aspx.designer.cs">
       <DependentUpon>Admin_usuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Carrito.aspx.cs">
+    <Compile Include="Cliente\Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Carrito.aspx.designer.cs">
+    <Compile Include="Cliente\Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClaseMaestra_SQL.cs" />
-    <Compile Include="ClaseProducto.cs" />
-    <Compile Include="Cliente_historial.aspx.cs">
+    <Compile Include="Datos\ClaseMaestra_SQL.cs" />
+    <Compile Include="Datos\ClaseProducto.cs" />
+    <Compile Include="Cliente\Cliente_historial.aspx.cs">
       <DependentUpon>Cliente_historial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cliente_historial.aspx.designer.cs">
+    <Compile Include="Cliente\Cliente_historial.aspx.designer.cs">
       <DependentUpon>Cliente_historial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home_admin.aspx.cs">
+    <Compile Include="Admin\Home_admin.aspx.cs">
       <DependentUpon>Home_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home_admin.aspx.designer.cs">
+    <Compile Include="Admin\Home_admin.aspx.designer.cs">
       <DependentUpon>Home_admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home_cliente.aspx.cs">
+    <Compile Include="Cliente\Home_cliente.aspx.cs">
       <DependentUpon>Home_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home_cliente.aspx.designer.cs">
+    <Compile Include="Cliente\Home_cliente.aspx.designer.cs">
       <DependentUpon>Home_cliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Productos_alta.aspx.cs">
+    <Compile Include="Admin\Productos_alta.aspx.cs">
       <DependentUpon>Productos_alta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Productos_alta.aspx.designer.cs">
+    <Compile Include="Admin\Productos_alta.aspx.designer.cs">
       <DependentUpon>Productos_alta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Producto_especifico.aspx.cs">
+    <Compile Include="Cliente\Producto_especifico.aspx.cs">
       <DependentUpon>Producto_especifico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Producto_especifico.aspx.designer.cs">
+    <Compile Include="Cliente\Producto_especifico.aspx.designer.cs">
       <DependentUpon>Producto_especifico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Productos_browser.aspx.cs">
+    <Compile Include="Cliente\Productos_browser.aspx.cs">
       <DependentUpon>Productos_browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Productos_browser.aspx.designer.cs">
+    <Compile Include="Cliente\Productos_browser.aspx.designer.cs">
       <DependentUpon>Productos_browser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="General\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="General\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
@@ -186,14 +186,14 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sign_int.aspx.cs">
+    <Compile Include="General\Sign_int.aspx.cs">
       <DependentUpon>Sign_int.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sign_int.aspx.designer.cs">
+    <Compile Include="General\Sign_int.aspx.designer.cs">
       <DependentUpon>Sign_int.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Datos\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

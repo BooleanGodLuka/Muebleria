@@ -122,7 +122,7 @@ namespace TP_Muebleria_asp
                 ///agregar columna a la tabla con nuevo producto
                 ///una vez que le den al comprar en el form del carrito limpiar dataset session[carrito]
                 Session["Carrito"] = aux;
-                Server.Transfer("Carrito.aspx");
+                Server.Transfer("/Cliente/Carrito.aspx");
             }
             else
             {
@@ -160,7 +160,7 @@ namespace TP_Muebleria_asp
 
 
                 Session["Carrito"] = aux2;
-                Server.Transfer("Carrito.aspx");
+                Server.Transfer("/Cliente/Carrito.aspx");
 
 
             }

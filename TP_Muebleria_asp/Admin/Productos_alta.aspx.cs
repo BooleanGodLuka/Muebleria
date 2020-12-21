@@ -116,7 +116,7 @@ namespace TP_Muebleria_asp
                 {
                     clasita.ejecutar_comando(consulta);
                     //acceso.aplicarconsultasql(consulta);
-                    Server.Transfer("Admin_Productos.aspx");
+                    Server.Transfer("/Admin/Admin_Productos.aspx");
                 }
                 catch (Exception ex)
                 {

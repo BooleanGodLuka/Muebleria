@@ -38,7 +38,7 @@ namespace TP_Muebleria_asp
                                              /// lo mismo en todos los otros eventos de click (obvio)  
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
             
         }
 
@@ -47,7 +47,7 @@ namespace TP_Muebleria_asp
             Session["Categoria"] = "cat1";
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
         }
 
         protected void cocina_lbtn_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace TP_Muebleria_asp
             Session["Categoria"] = "cat2";
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
         }
 
         protected void comedor_lbtn_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace TP_Muebleria_asp
             Session["Categoria"] = "cat3";
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
         }
 
         protected void baño_lbtn_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace TP_Muebleria_asp
             Session["Categoria"] = "cat5";
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
         }
 
         protected void contacto_lbtn_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace TP_Muebleria_asp
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
             Session["Categoria"] = null;
-            Response.Redirect("Productos_browser.aspx");
+            Response.Redirect("/Cliente/Productos_browser.aspx");
         }
 
         protected void login_btn_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace TP_Muebleria_asp
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
             Session["Categoria"] = null;
-            Response.Redirect("Login.aspx");
+            Response.Redirect("/General/Login.aspx");
         }
 
         protected void carrito_lbtn_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace TP_Muebleria_asp
             Session["Filtro"] = null;
             Session["Busqueda"] = null;
             Session["Categoria"] = null;
-            Response.Redirect("Carrito.aspx");
+            Response.Redirect("/Cliente/Carrito.aspx");
         }
 
         protected void buscar_btn_click(object sender, EventArgs e)
@@ -105,25 +105,25 @@ namespace TP_Muebleria_asp
             Session["Busqueda"] = buscar_text.Text.ToString();
             Session["Filtro"] = null;
             Session["Categoria"] = null;
-            Response.Redirect("Productos_browser.aspx?key=" + "B" + Session["Busqueda"]);
+            Response.Redirect("/Cliente/Productos_browser.aspx?key=" + "B" + Session["Busqueda"]);
         }
 
         protected void logo_ibtn_click (object sender, ImageClickEventArgs e)
         {
             if (Session["Usuario"] == null )
             {
-                Response.Redirect("Home_cliente.aspx");
+                Response.Redirect("/Cliente/Home_cliente.aspx");
 
             }else
             {
                 Usuario us = (Usuario)Session["Usuario"];
                 if (us.get_tipo() == "tu1   ")
                 {
-                    Response.Redirect("Home_cliente.aspx");
+                    Response.Redirect("/Cliente/Home_cliente.aspx");
                 }
                 else
                 {
-                    Response.Redirect("Home_admin.aspx");
+                    Response.Redirect("/Admin/Home_admin.aspx");
                 }
             }
         }

@@ -173,7 +173,7 @@ namespace TP_Muebleria_asp
 
             //Response.Write("<script>alert('" + Session["Filtro"] + "')</script>");
 
-            Response.Redirect("Productos_browser.aspx?key=" + "F" + Session["Filtro"]);
+            Response.Redirect("/Cliente/Productos_browser.aspx?key=" + "F" + Session["Filtro"]);
         }
 
     }

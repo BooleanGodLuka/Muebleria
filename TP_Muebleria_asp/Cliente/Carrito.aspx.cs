@@ -102,7 +102,7 @@ namespace TP_Muebleria_asp
 
             Session["Carrito"] = null;
             Response.Write("<script>alert('Compra realizada!')</script>");
-            Server.Transfer("Home_cliente.aspx");
+            Server.Transfer("/Cliente/Home_cliente.aspx");
 
         }
 

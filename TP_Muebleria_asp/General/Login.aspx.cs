@@ -48,23 +48,23 @@ namespace TP_Muebleria_asp
         protected void cerrarU_btn_Click(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
-            Server.Transfer("Login.aspx");
+            Server.Transfer("/General/Login.aspx");
         }
 
         protected void editar_btn_Click(object sender, EventArgs e)
         {
             
-            Server.Transfer("Sign_int.aspx");
+            Server.Transfer("/General/Sign_int.aspx");
         }
 
         protected void historial_btn_click(object sender, EventArgs e)
         {
-            Response.Redirect("Cliente_historial.aspx");
+            Response.Redirect("/Cliente/Cliente_historial.aspx");
         }
 
         protected void crearU_btn_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Sign_int.aspx");
+            Server.Transfer("/General/Sign_int.aspx");
 
         }
 
@@ -101,18 +101,18 @@ namespace TP_Muebleria_asp
                 Session["Usuario"] = us;
                 if (us.get_tipo() == "tu2   ")
                 {
-                    Server.Transfer("Home_admin.aspx");
+                    Server.Transfer("/Admin/Home_admin.aspx");
                 }
                 else
                 {
-                    Server.Transfer("Home_cliente.aspx");
+                    Server.Transfer("/Cliente/Home_cliente.aspx");
                 }
                 
             }
             else
             {
                 Response.Write("<script>alert('Datos incorrectos')</script>");
-                Server.Transfer("Login.aspx");
+                Server.Transfer("/General/Login.aspx");
             }
 
         
